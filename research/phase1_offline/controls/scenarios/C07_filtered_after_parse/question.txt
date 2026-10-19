@@ -1,0 +1,1 @@
+Average temperature at site a (filter applied after parsing).

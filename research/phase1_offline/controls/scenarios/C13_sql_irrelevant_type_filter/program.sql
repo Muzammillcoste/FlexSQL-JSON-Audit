@@ -1,0 +1,1 @@
+SELECT ROUND(SUM(CAST(json_extract(payload, '$.amount') AS REAL)), 2) AS total FROM events_c WHERE json_extract(payload, '$.type') = 'purchase'

@@ -1,0 +1,1 @@
+SELECT ROUND(AVG(json_extract(s.payload, '$.temp_c')), 2) AS avg_t FROM sensors_c AS s JOIN sites_c AS z ON s.site = z.site WHERE z.region = 'west'

@@ -1,0 +1,1 @@
+{"instance_id": "p0_H01", "db": "payments", "question": "What is the total amount, in US dollars rounded to 2 decimal places, of succeeded payments denominated in US dollars (USD) received by merchants in the 'EMEA' region? Ignore payments in other currencies. Payment status and currency codes are case-insensitive.", "external_knowledge": null}

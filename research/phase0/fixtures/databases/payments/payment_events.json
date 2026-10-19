@@ -1,0 +1,183 @@
+{
+    "sample_rows": [
+        {
+            "event_id": "evt_01088",
+            "merchant_id": "M-16",
+            "created_at": "2025-03-20 09:49:48",
+            "api_version": "2023-01",
+            "payload": "{\"object\": \"charge\", \"amount\": 38.1, \"currency\": \"EUR\", \"status\": \"succeeded\", \"card\": {\"brand\": \"mastercard\", \"last4\": \"1016\"}, \"fee\": 1.78, \"customer\": {\"id\": \"cus_86610805\"}}"
+        },
+        {
+            "event_id": "evt_00224",
+            "merchant_id": "M-29",
+            "created_at": "2025-01-17 00:26:52",
+            "api_version": "2023-01",
+            "payload": "{\"object\": \"charge\", \"amount\": 6.65, \"currency\": \"USD\", \"status\": \"failed\", \"card\": {\"brand\": \"amex\", \"last4\": \"0932\"}, \"fee\": 0.49, \"customer\": {\"id\": \"cus_16763556\"}}"
+        },
+        {
+            "event_id": "evt_01971",
+            "merchant_id": "M-18",
+            "created_at": "2025-05-23 19:26:35",
+            "api_version": "2023-01",
+            "payload": "{\"object\": \"charge\", \"amount\": 15.85, \"currency\": \"EUR\", \"status\": \"succeeded\", \"card\": {\"brand\": \"visa\", \"last4\": \"4466\"}, \"fee\": 0.92, \"customer\": {\"id\": \"cus_93443099\"}}"
+        },
+        {
+            "event_id": "evt_01453",
+            "merchant_id": "M-08",
+            "created_at": "2025-04-15 07:34:59",
+            "api_version": "2024-06",
+            "payload": "{\"object\": \"payment_intent\", \"amount_cents\": 3141, \"currency_code\": \"eur\", \"state\": \"SUCCEEDED\", \"payment_method\": {\"type\": \"card\", \"card\": {\"network\": \"VISA\", \"last4\": \"9247\"}}, \"fees\": [{\"type\": \"processing\", \"amount_cents\": 121}, {\"type\": \"fx\", \"amount_cents\": 31}], \"customer\": {\"id\": \"cus_30056245\", \"email\": \"user1453@example.com\"}}"
+        },
+        {
+            "event_id": "evt_00320",
+            "merchant_id": "M-34",
+            "created_at": "2025-01-25 05:35:18",
+            "api_version": "2024-06",
+            "payload": "{\"object\": \"payment_intent\", \"amount_cents\": 1809, \"currency_code\": \"usd\", \"state\": \"SUCCEEDED\", \"payment_method\": {\"type\": \"card\", \"card\": {\"network\": \"VISA\", \"last4\": \"8046\"}}, \"fees\": [{\"type\": \"processing\", \"amount_cents\": 82}], \"customer\": {\"id\": \"cus_91588449\", \"email\": \"user320@example.com\"}}"
+        }
+    ],
+    "table_name": "payment_events",
+    "table_fullname": "payment_events",
+    "column_names": [
+        "event_id",
+        "merchant_id",
+        "created_at",
+        "api_version",
+        "payload"
+    ],
+    "column_types": [
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "event_id": [
+            "evt_01088",
+            "evt_00224",
+            "evt_01971",
+            "evt_01453",
+            "evt_00320"
+        ],
+        "merchant_id": [
+            "M-16",
+            "M-29",
+            "M-18",
+            "M-08",
+            "M-34"
+        ],
+        "created_at": [
+            "2025-03-20 09:49:48",
+            "2025-01-17 00:26:52",
+            "2025-05-23 19:26:35",
+            "2025-04-15 07:34:59",
+            "2025-01-25 05:35:18"
+        ],
+        "api_version": [
+            "2023-01",
+            "2024-06"
+        ],
+        "payload": [
+            {
+                "object": "charge",
+                "amount": 38.1,
+                "currency": "EUR",
+                "status": "succeeded",
+                "card": {
+                    "brand": "mastercard",
+                    "last4": 1016
+                },
+                "fee": 1.78,
+                "customer": {
+                    "id": "cus_86610805"
+                }
+            },
+            {
+                "object": "charge",
+                "amount": 6.65,
+                "currency": "USD",
+                "status": "failed",
+                "card": {
+                    "brand": "amex",
+                    "last4": "0932"
+                },
+                "fee": 0.49,
+                "customer": {
+                    "id": "cus_16763556"
+                }
+            },
+            {
+                "object": "charge",
+                "amount": 15.85,
+                "currency": "EUR",
+                "status": "succeeded",
+                "card": {
+                    "brand": "visa",
+                    "last4": 4466
+                },
+                "fee": 0.92,
+                "customer": {
+                    "id": "cus_93443099"
+                }
+            },
+            {
+                "object": "payment_intent",
+                "amount_cents": 3141,
+                "currency_code": "eur",
+                "state": "SUCCEEDED",
+                "payment_method": {
+                    "type": "card",
+                    "card": {
+                        "network": "VISA",
+                        "last4": 9247
+                    }
+                },
+                "fees": [
+                    {
+                        "type": "processing",
+                        "amount_cents": 121
+                    },
+                    {
+                        "type": "fx",
+                        "amount_cents": 31
+                    }
+                ],
+                "customer": {
+                    "id": "cus_30056245",
+                    "email": "user1453@example.com"
+                }
+            },
+            {
+                "object": "payment_intent",
+                "amount_cents": 1809,
+                "currency_code": "usd",
+                "state": "SUCCEEDED",
+                "payment_method": {
+                    "type": "card",
+                    "card": {
+                        "network": "VISA",
+                        "last4": 8046
+                    }
+                },
+                "fees": [
+                    {
+                        "type": "processing",
+                        "amount_cents": 82
+                    }
+                ],
+                "customer": {
+                    "id": "cus_91588449",
+                    "email": "user320@example.com"
+                }
+            }
+        ]
+    }
+}

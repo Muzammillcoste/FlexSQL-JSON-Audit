@@ -1,0 +1,1 @@
+How many coupons have a code starting with C1?

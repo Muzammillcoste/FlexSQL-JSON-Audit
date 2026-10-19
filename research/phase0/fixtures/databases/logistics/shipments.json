@@ -1,0 +1,427 @@
+{
+    "sample_rows": [
+        {
+            "shipment_id": "SHP-001553",
+            "carrier_code": "BX",
+            "created_at": "2025-06-03 19:26:13",
+            "manifest": "{\"billable_weight_kg\": 7.21, \"declared_value_usd\": 4956.91, \"packages\": [{\"type\": \"box\", \"weight_kg\": 7.21, \"dims_cm\": [27, 36, 27], \"items\": [{\"sku\": \"P-0149\", \"qty\": 2}]}]}",
+            "tracking": "{\"carrier_ref\": \"TRK182002127\", \"events\": [{\"code\": \"PICKED_UP\", \"at\": \"2025-06-03T20:39:14Z\"}, {\"code\": \"IN_TRANSIT\", \"at\": \"2025-06-03T22:39:14Z\"}, {\"code\": \"DELIVERED\", \"at\": \"2025-06-08T09:06:11Z\"}]}"
+        },
+        {
+            "shipment_id": "SHP-001030",
+            "carrier_code": "OC",
+            "created_at": "2025-04-14 05:11:27",
+            "manifest": "{\"billable_weight_kg\": 121.41, \"declared_value_usd\": 3962.51, \"packages\": [{\"type\": \"pallet\", \"gross_weight_kg\": 121.41, \"boxes\": [{\"weight_kg\": 19.15, \"items\": [{\"sku\": \"P-0240\", \"qty\": 4}, {\"sku\": \"P-0381\", \"qty\": 2}]}, {\"weight_kg\": 12.12, \"items\": [{\"sku\": \"P-0116\", \"qty\": 5}]}, {\"weight_kg\": 7.66, \"items\": [{\"sku\": \"P-0179\", \"qty\": 5}, {\"sku\": \"P-0307\", \"qty\": 4}]}, {\"weight_kg\": 5.08, \"items\": [{\"sku\": \"P-0302\", \"qty\": 1}, {\"sku\": \"P-0033\", \"qty\": 3}, {\"sku\": \"P-0334\", \"qty\": 4}]}, {\"weight_kg\": 22.61, \"items\": [{\"sku\": \"P-0360\", \"qty\": 2}, {\"sku\": \"P-0334\", \"qty\": 3}, {\"sku\": \"P-0363\", \"qty\": 3}]}, {\"weight_kg\": 28.57, \"items\": [{\"sku\": \"P-0325\", \"qty\": 5}, {\"sku\": \"P-0316\", \"qty\": 2}, {\"sku\": \"P-0145\", \"qty\": 5}]}, {\"weight_kg\": 26.22, \"items\": [{\"sku\": \"P-0172\", \"qty\": 3}]}]}]}",
+            "tracking": "{\"carrier_ref\": \"TRK648352339\", \"events\": [{\"code\": \"PICKED_UP\", \"at\": \"2025-04-14T10:19:39Z\"}, {\"code\": \"IN_TRANSIT\", \"at\": \"2025-04-14T12:19:39Z\"}, {\"code\": \"DELIVERED\", \"at\": \"2025-04-28T08:01:41Z\"}]}"
+        },
+        {
+            "shipment_id": "SHP-000139",
+            "carrier_code": "BX",
+            "created_at": "2025-01-13 23:51:37",
+            "manifest": "{\"billable_weight_kg\": 47.91, \"declared_value_usd\": 1945.61, \"packages\": [{\"type\": \"box\", \"weight_kg\": 14.21, \"dims_cm\": [45, 78, 48], \"items\": [{\"sku\": \"P-0282\", \"qty\": 5}, {\"sku\": \"P-0359\", \"qty\": 1}]}, {\"type\": \"box\", \"weight_kg\": 2.45, \"dims_cm\": [48, 38, 35], \"items\": [{\"sku\": \"P-0209\", \"qty\": 4}, {\"sku\": \"P-0266\", \"qty\": 5}, {\"sku\": \"P-0088\", \"qty\": 1}, {\"sku\": \"P-0155\", \"qty\": 5}]}, {\"type\": \"box\", \"weight_kg\": 4.54, \"dims_cm\": [10, 29, 25], \"items\": [{\"sku\": \"P-0098\", \"qty\": 3}, {\"sku\": \"P-0096\", \"qty\": 6}]}]}",
+            "tracking": "{\"carrier_ref\": \"TRK456697155\", \"events\": [{\"code\": \"PICKED_UP\", \"at\": \"2025-01-14T01:55:29Z\"}, {\"code\": \"IN_TRANSIT\", \"at\": \"2025-01-14T03:55:29Z\"}, {\"code\": \"DELIVERED\", \"at\": \"2025-01-18T00:52:42Z\"}]}"
+        },
+        {
+            "shipment_id": "SHP-001106",
+            "carrier_code": "QX",
+            "created_at": "2025-04-21 01:52:41",
+            "manifest": "{\"billable_weight_kg\": 27.09, \"declared_value_usd\": 2281.04, \"packages\": [{\"type\": \"box\", \"weight_kg\": 1.66, \"dims_cm\": [72, 11, 45], \"items\": [{\"sku\": \"P-0223\", \"qty\": 2}, {\"sku\": \"P-0185\", \"qty\": 4}, {\"sku\": \"P-0319\", \"qty\": 2}]}, {\"type\": \"box\", \"weight_kg\": 22.15, \"dims_cm\": [62, 69, 13], \"items\": [{\"sku\": \"P-0168\", \"qty\": 3}, {\"sku\": \"P-0076\", \"qty\": 5}, {\"sku\": \"P-0251\", \"qty\": 6}, {\"sku\": \"P-0397\", \"qty\": 3}]}, {\"type\": \"box\", \"weight_kg\": 3.28, \"dims_cm\": [31, 29, 49], \"items\": [{\"sku\": \"P-0037\", \"qty\": 4}, {\"sku\": \"P-0377\", \"qty\": 1}, {\"sku\": \"P-0160\", \"qty\": 2}, {\"sku\": \"P-0314\", \"qty\": 5}]}]}",
+            "tracking": "{\"carrier_ref\": \"TRK438011747\", \"events\": [{\"code\": \"PICKED_UP\", \"at\": \"2025-04-21T03:09:35Z\"}, {\"code\": \"IN_TRANSIT\", \"at\": \"2025-04-21T05:09:35Z\"}, {\"code\": \"DELIVERED\", \"at\": \"2025-04-22T14:26:02Z\"}]}"
+        },
+        {
+            "shipment_id": "SHP-000572",
+            "carrier_code": "SA",
+            "created_at": "2025-02-25 23:35:49",
+            "manifest": "{\"billable_weight_kg\": 26.2, \"declared_value_usd\": 943.94, \"packages\": [{\"type\": \"box\", \"weight_kg\": 12.05, \"dims_cm\": [30, 67, 22], \"items\": [{\"sku\": \"P-0138\", \"qty\": 4}]}, {\"type\": \"box\", \"weight_kg\": 14.15, \"dims_cm\": [56, 13, 14], \"items\": [{\"sku\": \"P-0135\", \"qty\": 4}, {\"sku\": \"P-0025\", \"qty\": 2}, {\"sku\": \"P-0382\", \"qty\": 4}]}]}",
+            "tracking": "{\"carrier_ref\": \"TRK521178966\", \"events\": [{\"code\": \"PICKED_UP\", \"at\": \"2025-02-26T05:29:21Z\"}, {\"code\": \"IN_TRANSIT\", \"at\": \"2025-02-26T07:29:21Z\"}, {\"code\": \"DELIVERED\", \"at\": \"2025-02-26T21:32:00Z\"}]}"
+        }
+    ],
+    "table_name": "shipments",
+    "table_fullname": "shipments",
+    "column_names": [
+        "shipment_id",
+        "carrier_code",
+        "created_at",
+        "manifest",
+        "tracking"
+    ],
+    "column_types": [
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "shipment_id": [
+            "SHP-001553",
+            "SHP-001030",
+            "SHP-000139",
+            "SHP-001106",
+            "SHP-000572"
+        ],
+        "carrier_code": [
+            "BX",
+            "OC",
+            "QX",
+            "SA"
+        ],
+        "created_at": [
+            "2025-06-03 19:26:13",
+            "2025-04-14 05:11:27",
+            "2025-01-13 23:51:37",
+            "2025-04-21 01:52:41",
+            "2025-02-25 23:35:49"
+        ],
+        "manifest": [
+            {
+                "billable_weight_kg": 7.21,
+                "declared_value_usd": 4956.91,
+                "packages": [
+                    {
+                        "type": "box",
+                        "weight_kg": 7.21,
+                        "dims_cm": [
+                            27,
+                            36,
+                            27
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0149",
+                                "qty": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "billable_weight_kg": 121.41,
+                "declared_value_usd": 3962.51,
+                "packages": [
+                    {
+                        "type": "pallet",
+                        "gross_weight_kg": 121.41,
+                        "boxes": [
+                            {
+                                "weight_kg": 19.15,
+                                "items": [
+                                    {
+                                        "sku": "P-0240",
+                                        "qty": 4
+                                    },
+                                    {
+                                        "sku": "P-0381",
+                                        "qty": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "weight_kg": 12.12,
+                                "items": [
+                                    {
+                                        "sku": "P-0116",
+                                        "qty": 5
+                                    }
+                                ]
+                            },
+                            "...",
+                            {
+                                "weight_kg": 26.22,
+                                "items": [
+                                    {
+                                        "sku": "P-0172",
+                                        "qty": 3
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "billable_weight_kg": 47.91,
+                "declared_value_usd": 1945.61,
+                "packages": [
+                    {
+                        "type": "box",
+                        "weight_kg": 14.21,
+                        "dims_cm": [
+                            45,
+                            78,
+                            48
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0282",
+                                "qty": 5
+                            },
+                            {
+                                "sku": "P-0359",
+                                "qty": 1
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "weight_kg": 2.45,
+                        "dims_cm": [
+                            48,
+                            38,
+                            35
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0209",
+                                "qty": 4
+                            },
+                            {
+                                "sku": "P-0266",
+                                "qty": 5
+                            },
+                            "...",
+                            {
+                                "sku": "P-0155",
+                                "qty": 5
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "weight_kg": 4.54,
+                        "dims_cm": [
+                            10,
+                            29,
+                            25
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0098",
+                                "qty": 3
+                            },
+                            {
+                                "sku": "P-0096",
+                                "qty": 6
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "billable_weight_kg": 27.09,
+                "declared_value_usd": 2281.04,
+                "packages": [
+                    {
+                        "type": "box",
+                        "weight_kg": 1.66,
+                        "dims_cm": [
+                            72,
+                            11,
+                            45
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0223",
+                                "qty": 2
+                            },
+                            {
+                                "sku": "P-0185",
+                                "qty": 4
+                            },
+                            {
+                                "sku": "P-0319",
+                                "qty": 2
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "weight_kg": 22.15,
+                        "dims_cm": [
+                            62,
+                            69,
+                            13
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0168",
+                                "qty": 3
+                            },
+                            {
+                                "sku": "P-0076",
+                                "qty": 5
+                            },
+                            "...",
+                            {
+                                "sku": "P-0397",
+                                "qty": 3
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "weight_kg": 3.28,
+                        "dims_cm": [
+                            31,
+                            29,
+                            49
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0037",
+                                "qty": 4
+                            },
+                            {
+                                "sku": "P-0377",
+                                "qty": 1
+                            },
+                            "...",
+                            {
+                                "sku": "P-0314",
+                                "qty": 5
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "billable_weight_kg": 26.2,
+                "declared_value_usd": 943.94,
+                "packages": [
+                    {
+                        "type": "box",
+                        "weight_kg": 12.05,
+                        "dims_cm": [
+                            30,
+                            67,
+                            22
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0138",
+                                "qty": 4
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "weight_kg": 14.15,
+                        "dims_cm": [
+                            56,
+                            13,
+                            14
+                        ],
+                        "items": [
+                            {
+                                "sku": "P-0135",
+                                "qty": 4
+                            },
+                            {
+                                "sku": "P-0025",
+                                "qty": 2
+                            },
+                            {
+                                "sku": "P-0382",
+                                "qty": 4
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tracking": [
+            {
+                "carrier_ref": "TRK182002127",
+                "events": [
+                    {
+                        "code": "PICKED_UP",
+                        "at": "2025-06-03T20:39:14Z"
+                    },
+                    {
+                        "code": "IN_TRANSIT",
+                        "at": "2025-06-03T22:39:14Z"
+                    },
+                    {
+                        "code": "DELIVERED",
+                        "at": "2025-06-08T09:06:11Z"
+                    }
+                ]
+            },
+            {
+                "carrier_ref": "TRK648352339",
+                "events": [
+                    {
+                        "code": "PICKED_UP",
+                        "at": "2025-04-14T10:19:39Z"
+                    },
+                    {
+                        "code": "IN_TRANSIT",
+                        "at": "2025-04-14T12:19:39Z"
+                    },
+                    {
+                        "code": "DELIVERED",
+                        "at": "2025-04-28T08:01:41Z"
+                    }
+                ]
+            },
+            {
+                "carrier_ref": "TRK456697155",
+                "events": [
+                    {
+                        "code": "PICKED_UP",
+                        "at": "2025-01-14T01:55:29Z"
+                    },
+                    {
+                        "code": "IN_TRANSIT",
+                        "at": "2025-01-14T03:55:29Z"
+                    },
+                    {
+                        "code": "DELIVERED",
+                        "at": "2025-01-18T00:52:42Z"
+                    }
+                ]
+            },
+            {
+                "carrier_ref": "TRK438011747",
+                "events": [
+                    {
+                        "code": "PICKED_UP",
+                        "at": "2025-04-21T03:09:35Z"
+                    },
+                    {
+                        "code": "IN_TRANSIT",
+                        "at": "2025-04-21T05:09:35Z"
+                    },
+                    {
+                        "code": "DELIVERED",
+                        "at": "2025-04-22T14:26:02Z"
+                    }
+                ]
+            },
+            {
+                "carrier_ref": "TRK521178966",
+                "events": [
+                    {
+                        "code": "PICKED_UP",
+                        "at": "2025-02-26T05:29:21Z"
+                    },
+                    {
+                        "code": "IN_TRANSIT",
+                        "at": "2025-02-26T07:29:21Z"
+                    },
+                    {
+                        "code": "DELIVERED",
+                        "at": "2025-02-26T21:32:00Z"
+                    }
+                ]
+            }
+        ]
+    }
+}

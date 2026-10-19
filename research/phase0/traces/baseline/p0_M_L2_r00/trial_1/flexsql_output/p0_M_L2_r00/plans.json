@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Join the 'readings' table and the 'devices' table on the 'device_id' column. Filter the joined results to include only those where the device 'model' is 'TX-200'. Further restrict the records to those where the 'recorded_at' timestamp falls within the month of July 2025 (i.e., '2025-07-01' to '2025-07-31'). Finally, parse the 'payload' JSON column to extract the 'status' value, filtering for records where the status is 'fault' (case-insensitive), and return the count of these records."
+		],
+		{
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			],
+			"devices": [
+				"device_id",
+				"model"
+			]
+		},
+		{
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\""
+		}
+	],
+	[
+		[
+			"First, retrieve all 'device_id' values from the 'devices' table where the 'model' matches 'TX-200'. Using this list of IDs, filter the 'readings' table to include only relevant rows. Further refine this subset by filtering for readings where the 'recorded_at' timestamp string begins with '2025-07'. Finally, parse the 'payload' JSON field in the remaining records to extract the 'status' value, identify those where the value is 'fault' (performing a case-insensitive match), and return the total count of these specific readings."
+		],
+		{
+			"devices": [
+				"device_id",
+				"model"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

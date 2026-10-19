@@ -1,0 +1,3 @@
+{
+	"payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+}

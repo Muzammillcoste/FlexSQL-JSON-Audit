@@ -1,0 +1,4 @@
+{
+ "sensors_c": "SELECT \"site\", \"payload\" FROM \"sensors_c\"",
+ "sites_c": "SELECT \"site\", \"region\" FROM \"sites_c\""
+}

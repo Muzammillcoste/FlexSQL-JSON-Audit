@@ -1,0 +1,1 @@
+{"instance_id": "p0_H03", "db": "payments", "question": "What is the total processing fee, in US dollars rounded to 2 decimal places, charged on succeeded USD-denominated payments created in the first quarter of 2025 (January to March)? Exclude foreign-exchange (FX) fees. Status and currency codes are case-insensitive.", "external_knowledge": null}

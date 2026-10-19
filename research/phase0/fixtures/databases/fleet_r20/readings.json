@@ -1,0 +1,156 @@
+{
+    "sample_rows": [
+        {
+            "reading_id": 2055,
+            "device_id": "D-040",
+            "recorded_at": "2025-06-16T17:22:14Z",
+            "payload": "{\"fw\": \"2.9.0\", \"data\": {\"readings\": [{\"k\": \"energy\", \"v\": 2638, \"u\": \"Wh\"}, {\"k\": \"temp\", \"v\": 87.8, \"u\": \"F\"}, {\"k\": \"hum\", \"v\": 69, \"u\": \"%\"}]}, \"state\": {\"code\": \"OK\"}}"
+        },
+        {
+            "reading_id": 1621,
+            "device_id": "D-046",
+            "recorded_at": "2025-06-06T10:41:50Z",
+            "payload": "{\"fw\": \"4.3.0\", \"metrics\": {\"energy_kwh\": 2.363, \"temp_c\": 21.8, \"humidity_pct\": 20}, \"status\": \"ok\"}"
+        },
+        {
+            "reading_id": 33,
+            "device_id": "D-001",
+            "recorded_at": "2025-05-01T15:37:18Z",
+            "payload": "{\"fw\": \"4.3.0\", \"metrics\": {\"energy_kwh\": 2.845, \"temp_c\": 32.6, \"humidity_pct\": 69}, \"status\": \"ok\"}"
+        },
+        {
+            "reading_id": 311,
+            "device_id": "D-010",
+            "recorded_at": "2025-05-07T21:15:12Z",
+            "payload": "{\"fw\": \"2.9.0\", \"data\": {\"readings\": [{\"k\": \"energy\", \"v\": 299, \"u\": \"Wh\"}, {\"k\": \"temp\", \"v\": 78.6, \"u\": \"F\"}, {\"k\": \"hum\", \"v\": 64, \"u\": \"%\"}]}, \"state\": {\"code\": \"OK\"}}"
+        },
+        {
+            "reading_id": 1000,
+            "device_id": "D-048",
+            "recorded_at": "2025-05-23T14:15:55Z",
+            "payload": "{\"fw\": \"4.2.1\", \"metrics\": {\"energy_kwh\": 1.508, \"temp_c\": 16.9, \"humidity_pct\": 21}, \"status\": \"ok\"}"
+        }
+    ],
+    "table_name": "readings",
+    "table_fullname": "readings",
+    "column_names": [
+        "reading_id",
+        "device_id",
+        "recorded_at",
+        "payload"
+    ],
+    "column_types": [
+        "INTEGER",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "reading_id": [
+            2055,
+            1621,
+            33,
+            311,
+            1000
+        ],
+        "device_id": [
+            "D-040",
+            "D-046",
+            "D-001",
+            "D-010",
+            "D-048"
+        ],
+        "recorded_at": [
+            "2025-06-16T17:22:14Z",
+            "2025-06-06T10:41:50Z",
+            "2025-05-01T15:37:18Z",
+            "2025-05-07T21:15:12Z",
+            "2025-05-23T14:15:55Z"
+        ],
+        "payload": [
+            {
+                "fw": "2.9.0",
+                "data": {
+                    "readings": [
+                        {
+                            "k": "energy",
+                            "v": 2638,
+                            "u": "Wh"
+                        },
+                        {
+                            "k": "temp",
+                            "v": 87.8,
+                            "u": "F"
+                        },
+                        {
+                            "k": "hum",
+                            "v": 69,
+                            "u": "%"
+                        }
+                    ]
+                },
+                "state": {
+                    "code": "OK"
+                }
+            },
+            {
+                "fw": "4.3.0",
+                "metrics": {
+                    "energy_kwh": 2.363,
+                    "temp_c": 21.8,
+                    "humidity_pct": 20
+                },
+                "status": "ok"
+            },
+            {
+                "fw": "4.3.0",
+                "metrics": {
+                    "energy_kwh": 2.845,
+                    "temp_c": 32.6,
+                    "humidity_pct": 69
+                },
+                "status": "ok"
+            },
+            {
+                "fw": "2.9.0",
+                "data": {
+                    "readings": [
+                        {
+                            "k": "energy",
+                            "v": 299,
+                            "u": "Wh"
+                        },
+                        {
+                            "k": "temp",
+                            "v": 78.6,
+                            "u": "F"
+                        },
+                        {
+                            "k": "hum",
+                            "v": 64,
+                            "u": "%"
+                        }
+                    ]
+                },
+                "state": {
+                    "code": "OK"
+                }
+            },
+            {
+                "fw": "4.2.1",
+                "metrics": {
+                    "energy_kwh": 1.508,
+                    "temp_c": 16.9,
+                    "humidity_pct": 21
+                },
+                "status": "ok"
+            }
+        ]
+    }
+}

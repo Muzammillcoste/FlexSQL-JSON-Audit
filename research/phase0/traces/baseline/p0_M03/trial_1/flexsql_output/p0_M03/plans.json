@@ -1,0 +1,28 @@
+[
+	[
+		[
+			"Scan the 'orders' table. For each row, interpret the 'details' column as a JSON object, extracting the nested shipping method (within the 'shipping' key) and the nested shipping cost. Filter the records to include only those where the extracted shipping method is exactly 'express'. Calculate the numerical average of all extracted shipping costs from these filtered records and round the result to exactly two decimal places."
+		],
+		{
+			"orders": [
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"details\"\nFROM \"orders\""
+		}
+	],
+	[
+		[
+			"Calculate the average shipping cost for orders where the shipping method is 'express'. Accomplish this by filtering the 'orders' table to select rows where the 'shipping.method' attribute nested within the 'details' JSON column is exactly 'express'. From this filtered subset, extract the 'shipping.cost' value, also nested within the 'details' JSON column. Finally, compute the average of these extracted cost values and ensure the result is rounded to two decimal places."
+		],
+		{
+			"orders": [
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"details\"\nFROM \"orders\""
+		}
+	]
+]

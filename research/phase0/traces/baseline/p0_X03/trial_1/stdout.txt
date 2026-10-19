@@ -1,0 +1,3 @@
+Completed processing for question p0_X03: {'status': 'success', 'question_id': 'p0_X03', 'usage': {'prompt_tokens': 73030, 'completion_tokens': 4840, 'total_tokens': 90681}}
+Aggregate token usage - prompt: 73030, completion: 4840, total: 90681
+Saved aggregate usage to inference_res/gemini-3.1-flash-lite-p0-baseline-p0_X03-t1--2-plans-1-programs-2step-batch-planning/total_usage\aggregate_usage_2026-10-19-14-06-49-894049.json

@@ -1,0 +1,4 @@
+{
+	"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+	"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+}

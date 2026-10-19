@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Join the 'devices' table and the 'readings' table using the 'device_id' column to associate each reading with a site. Filter the combined records to include only those where the site is 'north' and the 'recorded_at' timestamp falls within June 2025 (specifically, records where the date starts with '2025-06'). Extract the 'energy_kwh' value from the nested 'metrics' object within the 'payload' JSON column for each filtered record, calculate the sum of these values, and round the final result to 2 decimal places."
+		],
+		{
+			"devices": [
+				"device_id",
+				"site"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	],
+	[
+		[
+			"Identify the set of all 'device_id's located at the 'north' site by querying the 'devices' table. Next, query the 'readings' table to retrieve all readings recorded in June 2025 (where 'recorded_at' starts with '2025-06') for these specific devices. Extract the 'energy_kwh' value from the 'payload' JSON column for each of these readings and compute the sum of these values. Finally, round the total sum to 2 decimal places."
+		],
+		{
+			"devices": [
+				"device_id",
+				"site"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

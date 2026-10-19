@@ -1,0 +1,3 @@
+{
+	"customers": "SELECT\n  \"customer_id\",\n  \"segment\",\n  \"country\"\nFROM \"customers\""
+}

@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Join the 'shipments' table with the 'carriers' table using the 'carrier_code' column. Filter the results to only include shipments where the carrier's 'transport_mode' is exactly 'air' and the 'tracking' JSON field contains an event with the code exactly 'DELIVERED'. For each matching shipment, compute the transit time by calculating the difference (in hours) between the 'at' timestamp of the 'DELIVERED' event (extracted from the 'tracking' JSON) and the 'created_at' timestamp. Finally, calculate the average of these transit times across all resulting shipments and round the final value to 1 decimal place."
+		],
+		{
+			"shipments": [
+				"carrier_code",
+				"created_at",
+				"tracking"
+			],
+			"carriers": [
+				"carrier_code",
+				"transport_mode"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"carrier_code\",\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\"",
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+		}
+	],
+	[
+		[
+			"First, identify all 'carrier_code' values from the 'carriers' table where the 'transport_mode' is exactly 'air'. Filter the 'shipments' table to keep only those shipments whose 'carrier_code' is in the identified list and that contain a 'DELIVERED' event within their 'tracking' JSON field. For each such shipment, parse the 'tracking' JSON to find the event where the 'code' is 'DELIVERED' and extract its 'at' timestamp, then calculate the difference in hours between this 'at' timestamp and the shipment's 'created_at' timestamp. Finally, compute the average of these durations and round the result to 1 decimal place."
+		],
+		{
+			"carriers": [
+				"carrier_code",
+				"transport_mode"
+			],
+			"shipments": [
+				"carrier_code",
+				"created_at",
+				"tracking"
+			]
+		},
+		{
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\"",
+			"shipments": "SELECT\n  \"carrier_code\",\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+		}
+	]
+]

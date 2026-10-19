@@ -1,0 +1,249 @@
+{
+    "sample_rows": [
+        {
+            "order_id": 11342,
+            "customer_id": 55,
+            "order_date": "2025-01-29",
+            "status": "delivered",
+            "details": "{\"channel\": \"mobile\", \"shipping\": {\"method\": \"standard\", \"cost\": \"5.99\", \"address\": {\"city\": \"Boston\", \"country\": \"US\", \"postal_code\": \"26724\"}}, \"items\": [{\"sku\": \"SKU-1030\", \"category\": \"toys\", \"qty\": 2, \"unit_price\": 20.03}, {\"sku\": \"SKU-1022\", \"category\": \"home\", \"qty\": 1, \"unit_price\": 63.06}, {\"sku\": \"SKU-1127\", \"category\": \"toys\", \"qty\": 1, \"unit_price\": 74.79}], \"notes\": null}"
+        },
+        {
+            "order_id": 10763,
+            "customer_id": 175,
+            "order_date": "2025-01-25",
+            "status": "returned",
+            "details": "{\"channel\": \"web\", \"shipping\": {\"method\": \"express\", \"cost\": \"12.99\", \"address\": {\"city\": \"Marseille\", \"country\": \"FR\", \"postal_code\": \"57576\"}}, \"items\": [{\"sku\": \"SKU-1103\", \"category\": \"books\", \"qty\": 1, \"unit_price\": 16.29}], \"notes\": null}"
+        },
+        {
+            "order_id": 10070,
+            "customer_id": 279,
+            "order_date": "2025-06-19",
+            "status": "shipped",
+            "details": "{\"channel\": \"web\", \"shipping\": {\"method\": \"standard\", \"cost\": \"5.99\", \"address\": {\"city\": \"Osaka\", \"country\": \"JP\", \"postal_code\": \"30392\"}}, \"items\": [{\"sku\": \"SKU-1083\", \"category\": \"grocery\", \"qty\": 1, \"unit_price\": 13.64}, {\"sku\": \"SKU-1022\", \"category\": \"home\", \"qty\": 2, \"unit_price\": 63.06}, {\"sku\": \"SKU-1194\", \"category\": \"toys\", \"qty\": 2, \"unit_price\": 12.53}, {\"sku\": \"SKU-1171\", \"category\": \"home\", \"qty\": 3, \"unit_price\": 51.16}], \"notes\": null}"
+        },
+        {
+            "order_id": 10572,
+            "customer_id": 238,
+            "order_date": "2025-04-08",
+            "status": "delivered",
+            "details": "{\"channel\": \"web\", \"shipping\": {\"method\": \"standard\", \"cost\": \"4.99\", \"address\": {\"city\": \"Munich\", \"country\": \"DE\", \"postal_code\": \"51785\"}}, \"items\": [{\"sku\": \"SKU-1054\", \"category\": \"toys\", \"qty\": 3, \"unit_price\": 34.24}, {\"sku\": \"SKU-1185\", \"category\": \"electronics\", \"qty\": 1, \"unit_price\": 259.22}, {\"sku\": \"SKU-1139\", \"category\": \"electronics\", \"qty\": 1, \"unit_price\": 253.67}], \"coupon\": null, \"notes\": null}"
+        },
+        {
+            "order_id": 11263,
+            "customer_id": 68,
+            "order_date": "2025-04-26",
+            "status": "delivered",
+            "details": "{\"channel\": \"web\", \"shipping\": {\"method\": \"standard\", \"cost\": \"5.99\", \"address\": {\"city\": \"Tokyo\", \"country\": \"JP\", \"postal_code\": \"48064\"}}, \"items\": [{\"sku\": \"SKU-1086\", \"category\": \"home\", \"qty\": 1, \"unit_price\": 134.61}, {\"sku\": \"SKU-1053\", \"category\": \"toys\", \"qty\": 3, \"unit_price\": 72.53}, {\"sku\": \"SKU-1063\", \"category\": \"books\", \"qty\": 2, \"unit_price\": 29.71}, {\"sku\": \"SKU-1002\", \"category\": \"grocery\", \"qty\": 2, \"unit_price\": 2.04}, {\"sku\": \"SKU-1090\", \"category\": \"books\", \"qty\": 1, \"unit_price\": 11.0}], \"coupon\": null, \"notes\": null}"
+        }
+    ],
+    "table_name": "orders",
+    "table_fullname": "orders",
+    "column_names": [
+        "order_id",
+        "customer_id",
+        "order_date",
+        "status",
+        "details"
+    ],
+    "column_types": [
+        "INTEGER",
+        "INTEGER",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "order_id": [
+            11342,
+            10763,
+            10070,
+            10572,
+            11263
+        ],
+        "customer_id": [
+            55,
+            175,
+            279,
+            238,
+            68
+        ],
+        "order_date": [
+            "2025-01-29",
+            "2025-01-25",
+            "2025-06-19",
+            "2025-04-08",
+            "2025-04-26"
+        ],
+        "status": [
+            "delivered",
+            "returned",
+            "shipped"
+        ],
+        "details": [
+            {
+                "channel": "mobile",
+                "shipping": {
+                    "method": "standard",
+                    "cost": 5.99,
+                    "address": {
+                        "city": "Boston",
+                        "country": "US",
+                        "postal_code": 26724
+                    }
+                },
+                "items": [
+                    {
+                        "sku": "SKU-1030",
+                        "category": "toys",
+                        "qty": 2,
+                        "unit_price": 20.03
+                    },
+                    {
+                        "sku": "SKU-1022",
+                        "category": "home",
+                        "qty": 1,
+                        "unit_price": 63.06
+                    },
+                    {
+                        "sku": "SKU-1127",
+                        "category": "toys",
+                        "qty": 1,
+                        "unit_price": 74.79
+                    }
+                ],
+                "notes": null
+            },
+            {
+                "channel": "web",
+                "shipping": {
+                    "method": "express",
+                    "cost": 12.99,
+                    "address": {
+                        "city": "Marseille",
+                        "country": "FR",
+                        "postal_code": 57576
+                    }
+                },
+                "items": [
+                    {
+                        "sku": "SKU-1103",
+                        "category": "books",
+                        "qty": 1,
+                        "unit_price": 16.29
+                    }
+                ],
+                "notes": null
+            },
+            {
+                "channel": "web",
+                "shipping": {
+                    "method": "standard",
+                    "cost": 5.99,
+                    "address": {
+                        "city": "Osaka",
+                        "country": "JP",
+                        "postal_code": 30392
+                    }
+                },
+                "items": [
+                    {
+                        "sku": "SKU-1083",
+                        "category": "grocery",
+                        "qty": 1,
+                        "unit_price": 13.64
+                    },
+                    {
+                        "sku": "SKU-1022",
+                        "category": "home",
+                        "qty": 2,
+                        "unit_price": 63.06
+                    },
+                    "...",
+                    {
+                        "sku": "SKU-1171",
+                        "category": "home",
+                        "qty": 3,
+                        "unit_price": 51.16
+                    }
+                ],
+                "notes": null
+            },
+            {
+                "channel": "web",
+                "shipping": {
+                    "method": "standard",
+                    "cost": 4.99,
+                    "address": {
+                        "city": "Munich",
+                        "country": "DE",
+                        "postal_code": 51785
+                    }
+                },
+                "items": [
+                    {
+                        "sku": "SKU-1054",
+                        "category": "toys",
+                        "qty": 3,
+                        "unit_price": 34.24
+                    },
+                    {
+                        "sku": "SKU-1185",
+                        "category": "electronics",
+                        "qty": 1,
+                        "unit_price": 259.22
+                    },
+                    {
+                        "sku": "SKU-1139",
+                        "category": "electronics",
+                        "qty": 1,
+                        "unit_price": 253.67
+                    }
+                ],
+                "coupon": null,
+                "notes": null
+            },
+            {
+                "channel": "web",
+                "shipping": {
+                    "method": "standard",
+                    "cost": 5.99,
+                    "address": {
+                        "city": "Tokyo",
+                        "country": "JP",
+                        "postal_code": 48064
+                    }
+                },
+                "items": [
+                    {
+                        "sku": "SKU-1086",
+                        "category": "home",
+                        "qty": 1,
+                        "unit_price": 134.61
+                    },
+                    {
+                        "sku": "SKU-1053",
+                        "category": "toys",
+                        "qty": 3,
+                        "unit_price": 72.53
+                    },
+                    "...",
+                    {
+                        "sku": "SKU-1090",
+                        "category": "books",
+                        "qty": 1,
+                        "unit_price": 11.0
+                    }
+                ],
+                "coupon": null,
+                "notes": null
+            }
+        ]
+    }
+}

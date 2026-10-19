@@ -1,0 +1,378 @@
+{
+ "status": "wrong_answer",
+ "correct": 0,
+ "final_answer": {
+  "index": [
+   0
+  ],
+  "columns": [
+   "total_energy"
+  ],
+  "data": [
+   [
+    524.5
+   ]
+  ]
+ },
+ "gold": {
+  "index": [
+   0
+  ],
+  "columns": [
+   "total_energy_kwh"
+  ],
+  "data": [
+   [
+    548.4
+   ]
+  ]
+ },
+ "chosen_program": "program_output_0_0.csv",
+ "program_lang": "sql",
+ "program": "SELECT\n  ROUND(SUM(\"r\".\"payload\" -> '$.metrics.energy_kwh'), 2) AS \"total_energy\"\nFROM \"readings\" AS \"r\"\nJOIN \"devices\" AS \"d\"\n  ON \"r\".\"device_id\" = \"d\".\"device_id\"\nWHERE\n  \"d\".\"site\" = 'north'\n  AND \"r\".\"recorded_at\" >= '2025-06-01T00:00:00Z'\n  AND \"r\".\"recorded_at\" < '2025-07-01T00:00:00Z'",
+ "majority_summary": {
+  "status": "ok",
+  "chosen_file": "program_output_0_0.csv",
+  "vote_count": 2,
+  "total_considered": 2,
+  "total_files": 2,
+  "groups": {
+   "0": [
+    "program_output_0_0.csv",
+    "program_output_1_0.csv"
+   ]
+  },
+  "errors": [],
+  "skipped": [],
+  "orphaned": []
+ },
+ "candidate_scores": {
+  "program_output_0_0.csv": 0,
+  "program_output_1_0.csv": 0
+ },
+ "exec_error_retries_in_log": 0,
+ "tool_error_outputs": 2,
+ "tool_calls_by_stage": {
+  "planning:list_columns": 2,
+  "clarification:list_columns": 4,
+  "clarification:get_distinct_values": 1,
+  "self_eval:list_columns": 4,
+  "self_eval:query_database": 19,
+  "self_eval:get_distinct_values": 1,
+  "self_eval:python_interpreter": 1,
+  "stitching:query_database": 1
+ },
+ "required_structures": [
+  "fleet_alt_energy"
+ ],
+ "observed": {
+  "fleet_alt_energy": []
+ },
+ "used_in_final_program": {
+  "fleet_alt_energy": false
+ },
+ "trace": {
+  "n_llm_calls": 36,
+  "n_llm_errors": 0,
+  "n_provider_retries": 0,
+  "provider_errors": [],
+  "llm_latency_s": 75.5,
+  "usage": {
+   "prompt_tokens": 150292,
+   "completion_tokens": 3329,
+   "total_tokens": 168063
+  },
+  "models": [
+   "gemini-3.1-flash-lite"
+  ]
+ },
+ "tool_calls": [
+  {
+   "seq": 1,
+   "stage": "planning",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 1,
+   "stage": "planning",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"devices\"}",
+   "output": "Columns in table 'devices':\n- device_id: TEXT\n  Examples: ['D-020', 'D-014' ... )]\n- site: TEXT\n  Examples: ['south', 'north' ... )]\n- model: TEXT\n  Examples: ['TX-200', 'TX-100']\n- installed_on: TEXT\n  Examples: ['2024-05-29', '2024-05-13' ... )]"
+  },
+  {
+   "seq": 3,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 3,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"devices\"}",
+   "output": "Columns in table 'devices':\n- device_id: TEXT\n  Examples: ['D-020', 'D-014' ... )]\n- site: TEXT\n  Examples: ['south', 'north' ... )]\n- model: TEXT\n  Examples: ['TX-200', 'TX-100']\n- installed_on: TEXT\n  Examples: ['2024-05-29', '2024-05-13' ... )]"
+  },
+  {
+   "seq": 3,
+   "stage": "clarification",
+   "name": "get_distinct_values",
+   "arguments": "{\"column\":\"site\",\"table\":\"devices\"}",
+   "output": "Distinct values in devices.site:\n- east\n- north\n- south\n- west"
+  },
+  {
+   "seq": 5,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"devices\"}",
+   "output": "Columns in table 'devices':\n- device_id: TEXT\n  Examples: ['D-020', 'D-014' ... )]\n- site: TEXT\n  Examples: ['south', 'north' ... )]\n- model: TEXT\n  Examples: ['TX-200', 'TX-100']\n- installed_on: TEXT\n  Examples: ['2024-05-29', '2024-05-13' ... )]"
+  },
+  {
+   "seq": 5,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 8,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 9,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  SUM(CAST(json_extract(payload, '$.metrics.energy_kwh') AS REAL)) AS \\\"total_energy_with_json_extract\\\"\\nFROM \\\"readings\\\" AS \\\"r\\\"\\nJOIN \\\"devices\\\" AS \\\"d\\\"\\n  ON \\\"r\\\".\\\"device_id\\\" = \\\"d\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"d\\\".\\\"site\\\" = 'north'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003e= '2025-06-01T00:00:00Z'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003c '2025-07-01T00:00:00Z'\"}",
+   "output": "20 example rows:\n| total_energy_with_json_extract |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 10,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  ROUND(SUM(\\\"r\\\".\\\"payload\\\" -\\u003e '$.metrics.energy_kwh'), 2) AS \\\"total_energy\\\"\\nFROM \\\"readings\\\" AS \\\"r\\\"\\nJOIN \\\"devices\\\" AS \\\"d\\\"\\n  ON \\\"r\\\".\\\"device_id\\\" = \\\"d\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"d\\\".\\\"site\\\" = 'north'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003e= '2025-06-01T00:00:00Z'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003c '2025-07-01T00:00:00Z'\"}",
+   "output": "20 example rows:\n| total_energy |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 11,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT \\\"r\\\".\\\"payload\\\" -\\u003e '$.metrics.energy_kwh' AS val FROM \\\"readings\\\" LIMIT 1;\"}",
+   "output": "Error executing query: no such column: r.payload"
+  },
+  {
+   "seq": 12,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  ROUND(SUM(json_extract(\\\"r\\\".\\\"payload\\\", '$.metrics.energy_kwh')), 2) AS \\\"total_energy\\\"\\nFROM \\\"readings\\\" AS \\\"r\\\"\\nJOIN \\\"devices\\\" AS \\\"d\\\"\\n  ON \\\"r\\\".\\\"device_id\\\" = \\\"d\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"d\\\".\\\"site\\\" = 'north'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003e= '2025-06-01T00:00:00Z'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003c '2025-07-01T00:00:00Z'\"}",
+   "output": "20 example rows:\n| total_energy |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 13,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  SUM(json_extract(\\\"r\\\".\\\"payload\\\", '$.metrics.energy_kwh')) AS \\\"total_energy\\\"\\nFROM \\\"readings\\\" AS \\\"r\\\"\\nJOIN \\\"devices\\\" AS \\\"d\\\"\\n  ON \\\"r\\\".\\\"device_id\\\" = \\\"d\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"d\\\".\\\"site\\\" = 'north'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003e= '2025-06-01T00:00:00Z'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003c '2025-07-01T00:00:00Z'\"}",
+   "output": "20 example rows:\n| total_energy |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 14,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT ROUND(524.505, 2);\"}",
+   "output": "20 example rows:\n| ROUND(524.505, 2) |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 15,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  ROUND(SUM(\\\"r\\\".\\\"payload\\\" -\\u003e '$.metrics.energy_kwh'), 2) AS \\\"total_energy\\\"\\nFROM \\\"readings\\\" AS \\\"r\\\"\\nJOIN \\\"devices\\\" AS \\\"d\\\"\\n  ON \\\"r\\\".\\\"device_id\\\" = \\\"d\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"d\\\".\\\"site\\\" = 'north'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003e= '2025-06-01T00:00:00Z'\\n  AND \\\"r\\\".\\\"recorded_at\\\" \\u003c '2025-07-01T00:00:00Z'\"}",
+   "output": "20 example rows:\n| total_energy |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 16,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT TYPEOF(\\\"r\\\".\\\"payload\\\" -\\u003e '$.metrics.energy_kwh') AS type FROM \\\"readings\\\" LIMIT 1;\"}",
+   "output": "Error executing query: no such column: r.payload"
+  },
+  {
+   "seq": 17,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 18,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT json_extract(payload, '$.metrics.energy_kwh') as val FROM readings LIMIT 1;\"}",
+   "output": "20 example rows:\n| val |\n| --- |\n| 2.926 |\n"
+  },
+  {
+   "seq": 19,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT payload -\\u003e '$.metrics.energy_kwh' FROM readings LIMIT 1;\"}",
+   "output": "20 example rows:\n| \"payload\" -> '$.metrics.energy_kwh' |\n| --- |\n| 2.926 |\n"
+  },
+  {
+   "seq": 20,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT SUM(json_extract(payload, '$.metrics.energy_kwh')) FROM readings JOIN devices ON readings.device_id = devices.device_id WHERE site = 'north' AND recorded_at \\u003e= '2025-06-01' AND recorded_at \\u003c '2025-07-01';\"}",
+   "output": "20 example rows:\n| SUM(\"payload\" -> '$.metrics.energy_kwh') |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 21,
+   "stage": "self_eval",
+   "name": "get_distinct_values",
+   "arguments": "{\"column\":\"site\",\"table\":\"devices\"}",
+   "output": "Distinct values in devices.site:\n- east\n- north\n- south\n- west"
+  },
+  {
+   "seq": 22,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT printf(\\\"%.2f\\\", SUM(json_extract(payload, '$.metrics.energy_kwh'))) FROM readings JOIN devices ON readings.device_id = devices.device_id WHERE site = 'north' AND recorded_at \\u003e= '2025-06-01' AND recorded_at \\u003c '2025-07-01';\"}",
+   "output": "20 example rows:\n| PRINTF(\"%.2f\", SUM(\"payload\" -> '$.metrics.energy_kwh')) |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 23,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT SUM(json_extract(payload, '$.metrics.energy_kwh')) AS s FROM readings JOIN devices ON readings.device_id = devices.device_id WHERE site = 'north' AND recorded_at \\u003e= '2025-06-01' AND recorded_at \\u003c '2025-07-01';\"}",
+   "output": "20 example rows:\n| s |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 24,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT SUM(json_extract(payload, '$.metrics.\\\"energy_kwh\\\"')) FROM readings JOIN devices ON readings.device_id = devices.device_id WHERE site = 'north' AND recorded_at \\u003e= '2025-06-01' AND recorded_at \\u003c '2025-07-01';\"}",
+   "output": "20 example rows:\n| SUM(\"payload\" -> '$.metrics.energy_kwh') |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 25,
+   "stage": "self_eval",
+   "name": "python_interpreter",
+   "arguments": "{\"code\":\"print(program_output)\"}",
+   "output": "total_energy\n0         524.5"
+  },
+  {
+   "seq": 26,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT COUNT(*) FROM readings;\"}",
+   "output": "20 example rows:\n| COUNT(*) |\n| --- |\n| 4000 |\n"
+  },
+  {
+   "seq": 28,
+   "stage": "stitching",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n    ROUND(SUM(json_extract(r.payload, '$.metrics.energy_kwh')), 2) AS total_energy_kwh\\nFROM readings r\\nJOIN devices d ON r.device_id = d.device_id\\nWHERE d.site = 'north'\\n  AND r.recorded_at LIKE '2025-06%';\"}",
+   "output": "20 example rows:\n| total_energy_kwh |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 30,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"devices\"}",
+   "output": "Columns in table 'devices':\n- device_id: TEXT\n  Examples: ['D-020', 'D-014' ... )]\n- site: TEXT\n  Examples: ['south', 'north' ... )]\n- model: TEXT\n  Examples: ['TX-200', 'TX-100']\n- installed_on: TEXT\n  Examples: ['2024-05-29', '2024-05-13' ... )]"
+  },
+  {
+   "seq": 31,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"readings\"}",
+   "output": "Columns in table 'readings':\n- reading_id: INTEGER\n  Examples: ['2055', '1621' ... )]\n- device_id: TEXT\n  Examples: ['D-040', 'D-046' ... )]\n- recorded_at: TEXT\n  Examples: ['2025-06-16T17:22:14Z', '2025-06-06T10:41:50Z' ... )]\n- payload: TEXT\n  Examples: ['{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.638, 'temp_c': 31.0, 'humidity_pct': 69}, 'status': 'ok'}', '{'fw': '4.3.0', 'metrics': {'energy_kwh': 2.363, 'temp_c': 21.8, 'humidity_pct': 20}, 'status': 'ok'}' ... )]"
+  },
+  {
+   "seq": 32,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT \\\"payload\\\" -\\u003e '$.metrics.energy_kwh' FROM \\\"readings\\\" LIMIT 5;\"}",
+   "output": "20 example rows:\n| \"payload\" -> '$.metrics.energy_kwh' |\n| --- |\n| 2.926 |\n| 1.439 |\n| 2.784 |\n| 2.938 |\n| 1.348 |\n"
+  },
+  {
+   "seq": 33,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  SUM(CAST(JSON_EXTRACT(\\\"payload\\\", '$.metrics.energy_kwh') AS REAL)) AS \\\"total_energy_kwh\\\"\\nFROM \\\"readings\\\"\\nJOIN \\\"devices\\\"\\n  ON \\\"readings\\\".\\\"device_id\\\" = \\\"devices\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"devices\\\".\\\"site\\\" = 'north' AND \\\"readings\\\".\\\"recorded_at\\\" LIKE '2025-06%';\"}",
+   "output": "20 example rows:\n| total_energy_kwh |\n| --- |\n| 524.505 |\n"
+  },
+  {
+   "seq": 34,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  ROUND(SUM(JSON_EXTRACT(\\\"payload\\\", '$.metrics.energy_kwh')), 2) AS \\\"total_energy_kwh\\\"\\nFROM \\\"readings\\\"\\nJOIN \\\"devices\\\"\\n  ON \\\"readings\\\".\\\"device_id\\\" = \\\"devices\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"devices\\\".\\\"site\\\" = 'north' AND \\\"readings\\\".\\\"recorded_at\\\" LIKE '2025-06%';\"}",
+   "output": "20 example rows:\n| total_energy_kwh |\n| --- |\n| 524.5 |\n"
+  },
+  {
+   "seq": 35,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT\\n  ROUND(SUM(\\\"readings\\\".\\\"payload\\\" -\\u003e '$.metrics.energy_kwh'), 2) AS \\\"total_energy_kwh\\\"\\nFROM \\\"readings\\\"\\nJOIN \\\"devices\\\"\\n  ON \\\"readings\\\".\\\"device_id\\\" = \\\"devices\\\".\\\"device_id\\\"\\nWHERE\\n  \\\"devices\\\".\\\"site\\\" = 'north' AND \\\"readings\\\".\\\"recorded_at\\\" LIKE '2025-06%'\"}",
+   "output": "20 example rows:\n| total_energy_kwh |\n| --- |\n| 524.5 |\n"
+  }
+ ],
+ "done": {
+  "case": "p0_X_L1_r05",
+  "arm": "diag_pathprofile",
+  "trial": 1,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_s": 90.1,
+  "provider_failure": false,
+  "inference_dir_found": true,
+  "majority_vote": {
+   "rc": 0,
+   "stdout": "Majority voting complete: 1/1 questions exported.\nSummary saved to: D:\\FlexSQL Research\\research\\phase0\\runs\\diag_pathprofile\\p0_X_L1_r05\\trial_1\\majority\\majority_vote_summary.json\n",
+   "stderr": ""
+  },
+  "cmd": [
+   "src/main.py",
+   "--model",
+   "<base_url>",
+   "https://generativelanguage.googleapis.com/v1beta/openai/",
+   "--dataset",
+   "D:\\FlexSQL Research\\research\\phase0\\runs\\diag_pathprofile\\p0_X_L1_r05\\trial_1\\question.jsonl",
+   "--db_path",
+   "D:\\FlexSQL Research\\research\\phase0\\fixtures\\databases",
+   "--db_type",
+   "sqlite",
+   "--workers",
+   "1",
+   "--custom_exp_name",
+   "p0-diag_pathprofile-p0_X_L1_r05-t1",
+   "--num_programs",
+   "1",
+   "--use_2step_batch_planning",
+   "--planning_top_k",
+   "2",
+   "--planning_batch_size",
+   "2",
+   "--planning_gen_config",
+   "{\"temperature\": 1.0}",
+   "--stitching_gen_config",
+   "{\"temperature\": 1.0}",
+   "--eval_gen_config",
+   "{\"temperature\": 1.0}",
+   "--max_self_eval_rounds",
+   "1"
+  ],
+  "finished_at": "2026-10-19T14:24:10",
+  "model": "gemini-3.1-flash-lite",
+  "killed_per_run_cost_cap": false,
+  "per_run_cost_cap_usd": 0.08,
+  "usage": {
+   "prompt_tokens": 150292,
+   "total_tokens": 168063,
+   "llm_calls": 36
+  },
+  "est_cost_usd": 0.0642
+ }
+}

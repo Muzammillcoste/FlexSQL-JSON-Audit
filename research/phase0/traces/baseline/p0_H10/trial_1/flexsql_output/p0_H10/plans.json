@@ -1,0 +1,28 @@
+[
+	[
+		[
+			"Parse the 'payload' JSON column from the 'payment_events' table, handling varying JSON schemas by reconciling 'currency'/'currency_code' and 'status'/'state' fields. Filter for records where the currency is 'usd' and the status is 'succeeded' (comparison made case-insensitive). Normalize the payment amount to US dollars, accounting for different representations (e.g., 'amount' in dollars or 'amount_cents' needing division by 100). Identify the maximum amount from this filtered and normalized set."
+		],
+		{
+			"payment_events": [
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"Parse the 'payload' JSON column in the 'payment_events' table to extract the 'amount', 'currency', and 'status' fields for each record. Filter these rows to include only those where the 'status' is 'succeeded' and the 'currency' is 'USD', ensuring that both comparisons are case-insensitive. From the resulting data set, determine the maximum numeric value of the 'amount' field to identify the largest single succeeded USD-denominated payment."
+		],
+		{
+			"payment_events": [
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

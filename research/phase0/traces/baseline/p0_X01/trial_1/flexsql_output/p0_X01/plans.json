@@ -1,0 +1,30 @@
+[
+	[
+		[
+			"1. Filter shipments created in May 2025 by performing a prefix match on the 'created_at' column in the 'shipments' table using '2025-05'. 2. For each relevant shipment, parse the 'manifest' JSON object to access the nested list of packages. 3. Iterate through the packages and extract each package's physical weight value. If the weight is provided in kilograms (e.g., in a 'weight_kg' field), use the value directly. If it is provided in grams (e.g., in a 'weight_g' field), convert it to kilograms by dividing by 1000. 4. Sum the weights of all individual packages across all identified shipments. 5. Round the final total sum to 1 decimal place."
+		],
+		{
+			"shipments": [
+				"created_at",
+				"manifest"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"created_at\",\n  \"manifest\"\nFROM \"shipments\""
+		}
+	],
+	[
+		[
+			"1. Retrieve all entries from the 'shipments' table where the 'created_at' timestamp falls within the month of May 2025. 2. For each shipment, parse the 'manifest' JSON field to extract every individual package object. 3. For each extracted package, identify its individual physical weight, ensuring that it is in kilograms (if the weight is provided in grams, divide by 1000; skip any billable weight fields). 4. Calculate the sum of all these individual package weights in kilograms. 5. Round the final total sum to 1 decimal place."
+		],
+		{
+			"shipments": [
+				"created_at",
+				"manifest"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"created_at\",\n  \"manifest\"\nFROM \"shipments\""
+		}
+	]
+]

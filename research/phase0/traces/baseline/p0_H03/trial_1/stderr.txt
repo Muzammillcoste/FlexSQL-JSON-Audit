@@ -1,0 +1,4 @@
+D:\FlexSQL Research\.venv-phase0\Lib\site-packages\snowflake\connector\vendored\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (7.4.3)/charset_normalizer (3.5.2) doesn't match a supported version!
+  warnings.warn(
+D:\FlexSQL Research\.venv-phase0\Lib\site-packages\snowflake\connector\vendored\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (7.4.3)/charset_normalizer (3.5.2) doesn't match a supported version!
+  warnings.warn(

@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Join the 'devices' and 'readings' tables on the 'device_id' column. Filter the results to include only records where the 'model' is 'TX-200', the 'recorded_at' timestamp is in July 2025 (e.g., formatted as '2025-07%'), and the 'payload' JSON contains a status of 'fault' (processed case-insensitively). Finally, count the number of resulting reading entries."
+		],
+		{
+			"devices": [
+				"device_id",
+				"model"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	],
+	[
+		[
+			"Perform an inner join between the 'devices' table and the 'readings' table using their 'device_id' columns. Filter the joined results to include only those where the device 'model' is 'TX-200', the 'recorded_at' field indicates a date in July 2025, and the 'payload' column (a JSON-encoded string) contains a 'status' key with the value 'fault' (case-insensitive). Finally, calculate the total count of rows that meet all these criteria."
+		],
+		{
+			"devices": [
+				"device_id",
+				"model"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

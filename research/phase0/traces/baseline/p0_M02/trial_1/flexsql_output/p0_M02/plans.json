@@ -1,0 +1,33 @@
+[
+	[
+		[
+			"Filter the 'orders' table to identify rows where the 'status' column is exactly 'delivered'. For each of these filtered rows, parse the JSON structure within the 'details' column to extract the 'items' list. From this list, filter for entries where the 'category' is 'electronics', extract the corresponding 'qty' (quantity) value for each, and calculate the total sum of all these quantities."
+		],
+		{
+			"orders": [
+				"status",
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+		}
+	],
+	[
+		[
+			"1. From the `orders` table, filter rows where the `status` column is exactly 'delivered'.",
+			"2. For the filtered orders, parse the `details` column (which contains JSON data) to extract the `items` array for each order.",
+			"3. From the expanded items, filter for those where the `category` attribute is 'electronics'.",
+			"4. Sum the `qty` values of these filtered items to obtain the total number of units."
+		],
+		{
+			"orders": [
+				"status",
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+		}
+	]
+]

@@ -1,0 +1,1 @@
+{"instance_id": "p0_H10", "db": "payments", "question": "What is the largest single succeeded payment amount among USD-denominated payments, in US dollars? Status and currency codes are case-insensitive.", "external_knowledge": null}

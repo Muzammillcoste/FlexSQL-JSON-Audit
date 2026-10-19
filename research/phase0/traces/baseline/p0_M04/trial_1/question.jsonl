@@ -1,0 +1,1 @@
+{"instance_id": "p0_M04", "db": "retail", "question": "How many orders used a coupon? An order used a coupon only if its coupon information is present and not null.", "external_knowledge": null}

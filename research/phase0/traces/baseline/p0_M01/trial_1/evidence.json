@@ -1,0 +1,295 @@
+{
+ "status": "correct",
+ "correct": 1,
+ "final_answer": {
+  "index": [
+   0
+  ],
+  "columns": [
+   "COUNT(*)"
+  ],
+  "data": [
+   [
+    10
+   ]
+  ]
+ },
+ "gold": {
+  "index": [
+   0
+  ],
+  "columns": [
+   "n_customers"
+  ],
+  "data": [
+   [
+    10
+   ]
+  ]
+ },
+ "chosen_program": "program_output_0_0.csv",
+ "program_lang": "sql",
+ "program": "SELECT\n  COUNT(*)\nFROM \"customers\"\nWHERE\n  \"segment\" = 'enterprise' AND \"country\" = 'DE'",
+ "majority_summary": {
+  "status": "ok",
+  "chosen_file": "program_output_0_0.csv",
+  "vote_count": 2,
+  "total_considered": 2,
+  "total_files": 2,
+  "groups": {
+   "0": [
+    "program_output_0_0.csv",
+    "program_output_1_0.csv"
+   ]
+  },
+  "errors": [],
+  "skipped": [],
+  "orphaned": []
+ },
+ "candidate_scores": {
+  "program_output_0_0.csv": 1,
+  "program_output_1_0.csv": 1
+ },
+ "exec_error_retries_in_log": 0,
+ "tool_error_outputs": 0,
+ "tool_calls_by_stage": {
+  "planning:list_columns": 2,
+  "clarification:list_columns": 2,
+  "clarification:get_distinct_values": 4,
+  "stitching:get_distinct_values": 4,
+  "stitching:query_database": 1,
+  "self_eval:list_columns": 2,
+  "self_eval:get_distinct_values": 4,
+  "self_eval:query_database": 3
+ },
+ "required_structures": [],
+ "observed": {},
+ "used_in_final_program": {},
+ "trace": {
+  "n_llm_calls": 29,
+  "n_llm_errors": 0,
+  "n_provider_retries": 0,
+  "provider_errors": [],
+  "llm_latency_s": 36.4,
+  "usage": {
+   "prompt_tokens": 62137,
+   "completion_tokens": 1148,
+   "total_tokens": 68812
+  },
+  "models": [
+   "gemini-3.1-flash-lite"
+  ]
+ },
+ "tool_calls": [
+  {
+   "seq": 1,
+   "stage": "planning",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"customers\"}",
+   "output": "Columns in table 'customers':\n- customer_id: INTEGER\n  Examples: ['224', '78' ... )]\n- full_name: TEXT\n  Examples: ['Hana Garcia', 'Fatima Dubois' ... )]\n- country: TEXT\n  Examples: ['GB', 'US' ... )]\n- segment: TEXT\n  Examples: ['consumer', 'enterprise']\n- signup_date: TEXT\n  Examples: ['2024-06-21', '2024-05-07' ... )]"
+  },
+  {
+   "seq": 2,
+   "stage": "planning",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"orders\"}",
+   "output": "Columns in table 'orders':\n- order_id: INTEGER\n  Examples: ['11342', '10763' ... )]\n- customer_id: INTEGER\n  Examples: ['55', '175' ... )]\n- order_date: TEXT\n  Examples: ['2025-01-29', '2025-01-25' ... )]\n- status: TEXT\n  Examples: ['delivered', 'returned' ... )]\n- details: TEXT\n  Examples: ['{'channel': 'mobile', 'shipping': {'method': 'standard', 'cost': 5.99, 'address': {'city': 'Boston', 'country': 'US', 'postal_code': 26724}}, 'items': [{'sku': 'SKU-1030', 'category': 'toys', 'qty': 2, 'unit_price': 20.03}, {'sku': 'SKU-1022', 'category': 'home', 'qty': 1, 'unit_price': 63.06}, {'sku': 'SKU-1127', 'category': 'toys', 'qty': 1, 'unit_price': 74.79}], 'notes': None}', '{'channel': 'web', 'shipping': {'method': 'express', 'cost': 12.99, 'address': {'city': 'Marseille', 'country': 'FR', 'postal_code': 57576}}, 'items': [{'sku': 'SKU-1103', 'category': 'books', 'qty': 1, 'unit_price': 16.29}], 'notes': None}' ... )]"
+  },
+  {
+   "seq": 4,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"customers\"}",
+   "output": "Columns in table 'customers':\n- customer_id: INTEGER\n  Examples: ['224', '78' ... )]\n- full_name: TEXT\n  Examples: ['Hana Garcia', 'Fatima Dubois' ... )]\n- country: TEXT\n  Examples: ['GB', 'US' ... )]\n- segment: TEXT\n  Examples: ['consumer', 'enterprise']\n- signup_date: TEXT\n  Examples: ['2024-06-21', '2024-05-07' ... )]"
+  },
+  {
+   "seq": 5,
+   "stage": "clarification",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"segment\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 6,
+   "stage": "clarification",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"country\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 8,
+   "stage": "clarification",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"customers\"}",
+   "output": "Columns in table 'customers':\n- customer_id: INTEGER\n  Examples: ['224', '78' ... )]\n- full_name: TEXT\n  Examples: ['Hana Garcia', 'Fatima Dubois' ... )]\n- country: TEXT\n  Examples: ['GB', 'US' ... )]\n- segment: TEXT\n  Examples: ['consumer', 'enterprise']\n- signup_date: TEXT\n  Examples: ['2024-06-21', '2024-05-07' ... )]"
+  },
+  {
+   "seq": 9,
+   "stage": "clarification",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"segment\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 10,
+   "stage": "clarification",
+   "name": "get_distinct_values",
+   "arguments": "{\"column\":\"country\",\"table\":\"customers\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 12,
+   "stage": "stitching",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"segment\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 13,
+   "stage": "stitching",
+   "name": "get_distinct_values",
+   "arguments": "{\"column\":\"country\",\"table\":\"customers\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 14,
+   "stage": "stitching",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT COUNT(*) FROM customers WHERE segment = 'enterprise' AND country = 'DE'\"}",
+   "output": "20 example rows:\n| COUNT(*) |\n| --- |\n| 10 |\n"
+  },
+  {
+   "seq": 16,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"customers\"}",
+   "output": "Columns in table 'customers':\n- customer_id: INTEGER\n  Examples: ['224', '78' ... )]\n- full_name: TEXT\n  Examples: ['Hana Garcia', 'Fatima Dubois' ... )]\n- country: TEXT\n  Examples: ['GB', 'US' ... )]\n- segment: TEXT\n  Examples: ['consumer', 'enterprise']\n- signup_date: TEXT\n  Examples: ['2024-06-21', '2024-05-07' ... )]"
+  },
+  {
+   "seq": 17,
+   "stage": "self_eval",
+   "name": "get_distinct_values",
+   "arguments": "{\"column\":\"segment\",\"table\":\"customers\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 18,
+   "stage": "self_eval",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"country\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 19,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT COUNT(*) FROM \\\"customers\\\" WHERE \\\"segment\\\" = 'enterprise' AND \\\"country\\\" = 'DE'\"}",
+   "output": "20 example rows:\n| COUNT(*) |\n| --- |\n| 10 |\n"
+  },
+  {
+   "seq": 21,
+   "stage": "stitching",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"segment\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 22,
+   "stage": "stitching",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"country\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 24,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT name FROM sqlite_master WHERE type='table';\"}",
+   "output": "20 example rows:\n| name |\n| --- |\n| customers |\n| orders |\n"
+  },
+  {
+   "seq": 25,
+   "stage": "self_eval",
+   "name": "list_columns",
+   "arguments": "{\"table_name\":\"customers\"}",
+   "output": "Columns in table 'customers':\n- customer_id: INTEGER\n  Examples: ['224', '78' ... )]\n- full_name: TEXT\n  Examples: ['Hana Garcia', 'Fatima Dubois' ... )]\n- country: TEXT\n  Examples: ['GB', 'US' ... )]\n- segment: TEXT\n  Examples: ['consumer', 'enterprise']\n- signup_date: TEXT\n  Examples: ['2024-06-21', '2024-05-07' ... )]"
+  },
+  {
+   "seq": 26,
+   "stage": "self_eval",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"country\"}",
+   "output": "Distinct values in customers.country:\n- DE\n- FR\n- GB\n- JP\n- US"
+  },
+  {
+   "seq": 27,
+   "stage": "self_eval",
+   "name": "get_distinct_values",
+   "arguments": "{\"table\":\"customers\",\"column\":\"segment\"}",
+   "output": "Distinct values in customers.segment:\n- consumer\n- enterprise\n- smb"
+  },
+  {
+   "seq": 28,
+   "stage": "self_eval",
+   "name": "query_database",
+   "arguments": "{\"query\":\"SELECT COUNT(DISTINCT \\\"customer_id\\\") FROM \\\"customers\\\" WHERE \\\"segment\\\" = 'enterprise' AND \\\"country\\\" = 'DE'\"}",
+   "output": "20 example rows:\n| COUNT(DISTINCT \"customer_id\") |\n| --- |\n| 10 |\n"
+  }
+ ],
+ "done": {
+  "case": "p0_M01",
+  "arm": "baseline",
+  "trial": 1,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_s": 50.0,
+  "provider_failure": false,
+  "inference_dir_found": true,
+  "majority_vote": {
+   "rc": 0,
+   "stdout": "Majority voting complete: 1/1 questions exported.\nSummary saved to: D:\\FlexSQL Research\\research\\phase0\\runs\\baseline\\p0_M01\\trial_1\\majority\\majority_vote_summary.json\n",
+   "stderr": ""
+  },
+  "cmd": [
+   "src/main.py",
+   "--model",
+   "<base_url>",
+   "https://generativelanguage.googleapis.com/v1beta/openai/",
+   "--dataset",
+   "D:\\FlexSQL Research\\research\\phase0\\runs\\baseline\\p0_M01\\trial_1\\question.jsonl",
+   "--db_path",
+   "D:\\FlexSQL Research\\research\\phase0\\fixtures\\databases",
+   "--db_type",
+   "sqlite",
+   "--workers",
+   "1",
+   "--custom_exp_name",
+   "p0-baseline-p0_M01-t1",
+   "--num_programs",
+   "1",
+   "--use_2step_batch_planning",
+   "--planning_top_k",
+   "2",
+   "--planning_batch_size",
+   "2",
+   "--planning_gen_config",
+   "{\"temperature\": 1.0}",
+   "--stitching_gen_config",
+   "{\"temperature\": 1.0}",
+   "--eval_gen_config",
+   "{\"temperature\": 1.0}",
+   "--max_self_eval_rounds",
+   "1"
+  ],
+  "finished_at": "2026-10-19T14:01:50",
+  "model": "gemini-3.1-flash-lite",
+  "killed_per_run_cost_cap": false,
+  "per_run_cost_cap_usd": 0.15,
+  "usage": {
+   "prompt_tokens": 62137,
+   "total_tokens": 68812,
+   "llm_calls": 29
+  },
+  "est_cost_usd": 0.0255
+ }
+}

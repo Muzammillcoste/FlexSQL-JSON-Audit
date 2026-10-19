@@ -1,0 +1,18 @@
+{
+  "p0_X02": {
+    "status": "ok",
+    "chosen_file": "program_output_0_0.csv",
+    "vote_count": 2,
+    "total_considered": 2,
+    "total_files": 2,
+    "groups": {
+      "0": [
+        "program_output_0_0.csv",
+        "program_output_1_0.csv"
+      ]
+    },
+    "errors": [],
+    "skipped": [],
+    "orphaned": []
+  }
+}

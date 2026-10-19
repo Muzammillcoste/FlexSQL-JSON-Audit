@@ -1,0 +1,40 @@
+[
+	[
+		[
+			"Join the 'merchants' and 'payment_events' tables on the 'merchant_id' column. Filter the joined records to include only those where the 'region' column in the 'merchants' table matches 'EMEA' exactly. For each record, parse the 'payload' JSON field in 'payment_events' to extract the 'status', 'currency', and 'amount'. From these, further filter for records where the extracted 'status' is 'succeeded' and the extracted 'currency' is 'USD' (case-insensitive). Finally, sum the 'amount' values of these filtered records and round the resulting total to two decimal places."
+		],
+		{
+			"merchants": [
+				"merchant_id",
+				"region"
+			],
+			"payment_events": [
+				"merchant_id",
+				"payload"
+			]
+		},
+		{
+			"merchants": "SELECT\n  \"merchant_id\",\n  \"region\"\nFROM \"merchants\"",
+			"payment_events": "SELECT\n  \"merchant_id\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"First, identify the 'merchant_id's for all merchants in the 'EMEA' region from the 'merchants' table. Second, parse the 'payload' JSON field in the 'payment_events' table to extract 'status', 'currency', and 'amount', and join these records with the previously identified 'EMEA' merchants using their 'merchant_id'. Third, filter the extracted records to include only those where 'status' is 'succeeded' and 'currency' is 'USD' (treating both as case-insensitive). Finally, sum the 'amount' values of these filtered records and round the total to two decimal places."
+		],
+		{
+			"merchants": [
+				"merchant_id",
+				"region"
+			],
+			"payment_events": [
+				"merchant_id",
+				"payload"
+			]
+		},
+		{
+			"merchants": "SELECT\n  \"merchant_id\",\n  \"region\"\nFROM \"merchants\"",
+			"payment_events": "SELECT\n  \"merchant_id\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

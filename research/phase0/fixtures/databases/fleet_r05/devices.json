@@ -1,0 +1,80 @@
+{
+    "sample_rows": [
+        {
+            "device_id": "D-020",
+            "site": "south",
+            "model": "TX-200",
+            "installed_on": "2024-05-29"
+        },
+        {
+            "device_id": "D-014",
+            "site": "north",
+            "model": "TX-200",
+            "installed_on": "2024-05-13"
+        },
+        {
+            "device_id": "D-007",
+            "site": "south",
+            "model": "TX-200",
+            "installed_on": "2024-06-16"
+        },
+        {
+            "device_id": "D-003",
+            "site": "west",
+            "model": "TX-100",
+            "installed_on": "2024-08-07"
+        },
+        {
+            "device_id": "D-005",
+            "site": "east",
+            "model": "TX-100",
+            "installed_on": "2024-05-01"
+        }
+    ],
+    "table_name": "devices",
+    "table_fullname": "devices",
+    "column_names": [
+        "device_id",
+        "site",
+        "model",
+        "installed_on"
+    ],
+    "column_types": [
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "device_id": [
+            "D-020",
+            "D-014",
+            "D-007",
+            "D-003",
+            "D-005"
+        ],
+        "site": [
+            "south",
+            "north",
+            "west",
+            "east"
+        ],
+        "model": [
+            "TX-200",
+            "TX-100"
+        ],
+        "installed_on": [
+            "2024-05-29",
+            "2024-05-13",
+            "2024-06-16",
+            "2024-08-07",
+            "2024-05-01"
+        ]
+    }
+}

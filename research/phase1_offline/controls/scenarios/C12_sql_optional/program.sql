@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS n FROM orders_c WHERE json_extract(payload, '$.gift_wrap') = 1

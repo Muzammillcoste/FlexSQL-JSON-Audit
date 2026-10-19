@@ -1,0 +1,1 @@
+{"instance_id": "p0_H02", "db": "payments", "question": "How many succeeded payments were paid with a Visa card? Include Visa cards used through digital wallets. Card brand and payment status values are case-insensitive.", "external_knowledge": null}

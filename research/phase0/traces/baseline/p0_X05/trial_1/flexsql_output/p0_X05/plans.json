@@ -1,0 +1,30 @@
+[
+	[
+		[
+			"Identify all rows in the 'payment_events' table where the 'created_at' timestamp falls between 2025-04-01 and 2025-06-30. For each row, parse the 'payload' JSON column to extract the payment status, currency, and amount. Perform a case-insensitive filter to include only succeeded payments by checking both the 'status' or 'state' fields for values equivalent to 'succeeded' and euro-denominated payments by checking both the 'currency' or 'currency_code' fields for values equivalent to 'EUR'. For each matching payment, normalize the amount to euros (converting by dividing by 100 if the 'amount_cents' field is present instead of 'amount'). Sum the normalized amounts of these filtered records and round the final total to two decimal places."
+		],
+		{
+			"payment_events": [
+				"created_at",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"Filter the 'payment_events' table to select records where the 'created_at' timestamp falls within the second quarter of 2025 (between '2025-04-01 00:00:00' and '2025-06-30 23:59:59'). Parse the 'payload' column (formatted as a JSON string) from these records to extract the 'amount', 'currency', and 'status' fields. Apply filters to retain only those entries where the 'status' is exactly 'succeeded' and the 'currency' is exactly 'EUR'. Sum the extracted 'amount' values and round the total to 2 decimal places."
+		],
+		{
+			"payment_events": [
+				"created_at",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

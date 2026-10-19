@@ -1,0 +1,112 @@
+[
+ {
+  "id": "C01_null_vs_absent",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C02_optional_bool",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C03_optional_object",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C04_irrelevant_type_guarded",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C05_irrelevant_type_default",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C06_filtered_before_parse",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C07_filtered_after_parse",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C08_join_restriction",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C09_same_leaf_name",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C10_array_optional_elem_key",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C11_numeric_strings",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "C12_sql_optional",
+  "db": "controls.sqlite",
+  "kind": "sql"
+ },
+ {
+  "id": "C13_sql_irrelevant_type_filter",
+  "db": "controls.sqlite",
+  "kind": "sql"
+ },
+ {
+  "id": "C14_sql_filtered_scope",
+  "db": "controls.sqlite",
+  "kind": "sql"
+ },
+ {
+  "id": "T01_py_rare_legacy",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "T02_sql_rare_legacy",
+  "db": "controls.sqlite",
+  "kind": "sql"
+ },
+ {
+  "id": "T03_array_element_variant",
+  "db": "controls.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "HO1_rare_obs_list",
+  "db": "heldout.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "HO2_complete_handling",
+  "db": "heldout.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "HO3_optional_allergies",
+  "db": "heldout.sqlite",
+  "kind": "py"
+ },
+ {
+  "id": "HO4_sql_rare_obs",
+  "db": "heldout.sqlite",
+  "kind": "sql"
+ },
+ {
+  "id": "HO5_visit_type_counts",
+  "db": "heldout.sqlite",
+  "kind": "py"
+ }
+]

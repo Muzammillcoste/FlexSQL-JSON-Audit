@@ -1,0 +1,4 @@
+arm,instance_id,trial,tier,db,alt_structure_rate,positive_control,status,correct,final_answer,gold,n_candidates,n_candidates_correct,pass_at_k,majority_vote_count,final_program_lang,exec_error_retries,tool_error_outputs,n_tool_calls,n_explore_calls,required_structures,all_required_observed,n_required_observed,all_required_used,n_llm_calls,prompt_tokens,completion_tokens,total_tokens,llm_latency_s,wall_s,provider_retries,provider_failure,timed_out,model_versions
+smoke,p0_M01,1,medium,retail,,True,correct,1,[[10]],[[10]],4,4,1,4,sql,0,0,16,12,,,,,31,57131,1698,67981,75.8,97.9,0,False,False,gemini-2.5-flash
+smoke,p0_M02,1,medium,retail,,False,wrong_answer,0,[[0]],[[828]],1,0,0,1,py,1,0,13,7,,,,,81,171505,2217,194334,353.5,395.9,0,False,False,gemini-2.5-flash
+smoke,p0_M02,1,medium,retail,,False,correct,1,[[828]],[[828]],4,4,1,4,py,0,6,186,46,,,,,196,1081652,15548,1140983,835.2,1032.8,0,False,False,gemini-3.8-flash

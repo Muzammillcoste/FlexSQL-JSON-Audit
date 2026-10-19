@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS n FROM visits WHERE json_extract(record, '$.vitals.hr') > 100 AND visit_date LIKE '2025-06%'

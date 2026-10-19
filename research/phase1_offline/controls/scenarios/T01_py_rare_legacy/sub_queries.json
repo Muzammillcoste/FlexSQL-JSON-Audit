@@ -1,0 +1,3 @@
+{
+ "gauges_c": "SELECT \"plant\", \"payload\" FROM \"gauges_c\""
+}

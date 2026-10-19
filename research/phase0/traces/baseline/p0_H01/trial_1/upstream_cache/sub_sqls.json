@@ -1,0 +1,4 @@
+{
+	"merchants": "SELECT\n  \"merchant_id\",\n  \"region\"\nFROM \"merchants\"",
+	"payment_events": "SELECT\n  \"merchant_id\",\n  \"payload\"\nFROM \"payment_events\""
+}

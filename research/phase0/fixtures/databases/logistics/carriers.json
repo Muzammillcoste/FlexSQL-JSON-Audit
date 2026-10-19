@@ -1,0 +1,68 @@
+{
+    "sample_rows": [
+        {
+            "carrier_code": "OC",
+            "carrier_name": "OceanCargo",
+            "transport_mode": "sea"
+        },
+        {
+            "carrier_code": "RL",
+            "carrier_name": "RailLink",
+            "transport_mode": "rail"
+        },
+        {
+            "carrier_code": "BX",
+            "carrier_name": "BoxRoad",
+            "transport_mode": "road"
+        },
+        {
+            "carrier_code": "FF",
+            "carrier_name": "FastFreight",
+            "transport_mode": "road"
+        },
+        {
+            "carrier_code": "QX",
+            "carrier_name": "QuickExpress",
+            "transport_mode": "air"
+        }
+    ],
+    "table_name": "carriers",
+    "table_fullname": "carriers",
+    "column_names": [
+        "carrier_code",
+        "carrier_name",
+        "transport_mode"
+    ],
+    "column_types": [
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "carrier_code": [
+            "OC",
+            "RL",
+            "BX",
+            "FF",
+            "QX"
+        ],
+        "carrier_name": [
+            "OceanCargo",
+            "RailLink",
+            "BoxRoad",
+            "FastFreight",
+            "QuickExpress"
+        ],
+        "transport_mode": [
+            "sea",
+            "rail",
+            "road",
+            "air"
+        ]
+    }
+}

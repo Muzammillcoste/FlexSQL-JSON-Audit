@@ -1,0 +1,29 @@
+[
+	[
+		[
+			"Parse the 'payload' JSON column in the 'payment_events' table. Since the structure varies, extract 'status' or 'state' to identify succeeded payments and 'card.brand' or 'payment_method.card.network' to identify payments made with a Visa card. Filter for records where the payment was successful (e.g., 'succeeded' or 'SUCCEEDED') and the card network is Visa (e.g., 'visa' or 'VISA'), regardless of whether it's a direct charge or a digital wallet-based payment intent. Count the total number of filtered records."
+		],
+		{
+			"payment_events": [
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"Parse the 'payload' JSON column in the 'payment_events' table to extract payment status and card brand information. To determine the payment status, check both the top-level 'status' field (for charge transactions) and the 'transaction.result.status' nested field (for wallet transactions). To determine the card brand, check both the 'card.brand' nested field (for charge transactions) and the 'instrument.details.card_brand' nested field (for wallet transactions). Filter and aggregate the data to count the number of unique 'event_id' values where the extracted payment status is 'succeeded' and the extracted card brand is 'visa' (treating both values as case-insensitive)."
+		],
+		{
+			"payment_events": [
+				"event_id",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"event_id\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

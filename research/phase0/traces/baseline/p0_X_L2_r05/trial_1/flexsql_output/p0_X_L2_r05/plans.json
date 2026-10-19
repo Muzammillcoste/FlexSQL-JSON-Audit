@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Retrieve the `device_id`s from the `devices` table for all devices with the model 'TX-200'. Subsequently, query the `readings` table to filter for all entries that have a `device_id` present in the retrieved list, a `recorded_at` timestamp occurring within the month of July 2025 (UTC), and a `payload` that contains a status indicative of a 'fault' (case-insensitive). Finally, calculate and return the total count of these filtered reading records."
+		],
+		{
+			"devices": [
+				"device_id",
+				"model"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	],
+	[
+		[
+			"Join the `devices` table with the `readings` table using the `device_id` column. Filter the combined dataset for devices where the `model` is 'TX-200'. Then, filter for readings that occurred in July 2025 (where `recorded_at` starts with '2025-07'). Finally, ensure the 'status' key extracted from the `payload` column is 'fault' (case-insensitive). Count the number of readings that satisfy all these conditions."
+		],
+		{
+			"devices": [
+				"device_id",
+				"model"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

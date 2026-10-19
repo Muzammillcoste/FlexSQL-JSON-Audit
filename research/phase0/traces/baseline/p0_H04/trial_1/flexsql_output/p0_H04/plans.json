@@ -1,0 +1,29 @@
+[
+	[
+		[
+			"Query the 'payment_events' table. Parse the 'payload' column from each record as a JSON object. Apply a filter to retain only those records where the 'email' key is present in the JSON structure AND the associated value is explicitly set to null. Count the total number of records that satisfy both of these conditions simultaneously."
+		],
+		{
+			"payment_events": [
+				"event_id",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"event_id\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"Retrieve records from the 'payment_events' table. From the 'payload' column (containing JSON data), filter rows where the 'email' key exists (to exclude events without an email field entirely), then further filter that subset to count rows where the 'email' value is explicitly null."
+		],
+		{
+			"payment_events": [
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

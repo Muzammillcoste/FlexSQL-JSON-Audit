@@ -1,0 +1,1 @@
+SELECT ROUND(AVG(json_extract(payload, '$.pressure')), 2) AS avg_kpa FROM gauges_c WHERE plant = 'p1'

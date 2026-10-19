@@ -1,0 +1,3 @@
+{
+ "visits": "SELECT \"visit_date\", \"record\" FROM \"visits\""
+}

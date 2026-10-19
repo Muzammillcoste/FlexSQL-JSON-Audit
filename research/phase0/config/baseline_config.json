@@ -1,0 +1,45 @@
+{
+  "_comment": "Primary Phase 0 baseline configuration (fixed for all baseline runs). Mirrors the upstream README command except: provider/model gemini-3.1-flash-lite (proxy for local vLLM gpt-oss-120b; user-imposed total budget of 5 USD; gemini-2.5-flash-lite returns 404 for this key), planning_top_k=2 and max_self_eval_rounds=1 instead of 8 and 3 (budget), no --hierarchical-sl/--similarities_path (Snowflake-only). History: gemini-2.5-flash smoke -> MALFORMED_FUNCTION_CALL on JSON stitching; gemini-3.8-flash smoke -> ~1.0-1.5 USD per question (too expensive). See environment.md.",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "drop_top_k": true,
+  "agent_args": [
+    "--num_programs",
+    "1",
+    "--use_2step_batch_planning",
+    "--planning_top_k",
+    "2",
+    "--planning_batch_size",
+    "2",
+    "--planning_gen_config",
+    "{\"temperature\": 1.0}",
+    "--stitching_gen_config",
+    "{\"temperature\": 1.0}",
+    "--eval_gen_config",
+    "{\"temperature\": 1.0}",
+    "--max_self_eval_rounds",
+    "1"
+  ],
+  "upstream_default_request_params": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "reasoning_effort": "high"
+  },
+  "pilot_cases": [
+    "p0_M02",
+    "p0_M04",
+    "p0_H01",
+    "p0_H_L1_r20",
+    "p0_X02",
+    "p0_X_L1_r05"
+  ],
+  "restore_gemini_thought_signature": true,
+  "pricing_usd_per_1m": {
+    "input": 0.25,
+    "output_incl_thinking": 1.5,
+    "source": "https://ai.google.dev/gemini-api/docs/pricing (fetched 2026-10-19)"
+  },
+  "budget_cap_usd": 2.05,
+  "per_run_cost_cap_usd": 0.08
+}

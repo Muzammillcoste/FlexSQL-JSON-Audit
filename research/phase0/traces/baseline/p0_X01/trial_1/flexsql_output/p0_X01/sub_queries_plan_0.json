@@ -1,0 +1,3 @@
+{
+	"shipments": "SELECT\n  \"created_at\",\n  \"manifest\"\nFROM \"shipments\""
+}

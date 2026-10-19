@@ -1,0 +1,36 @@
+[
+	[
+		[
+			"Extract 'status', 'currency', 'fee', and any optional 'fx_fee' fields from the JSON 'payload' column in the 'payment_events' table. Perform the following filter operations: filter transactions where the status is 'succeeded', the currency is 'USD', and the 'created_at' timestamp is within the first quarter of 2025 (between '2025-01-01 00:00:00' and '2025-03-31 23:59:59'). For each filtered transaction, calculate the net fee as the 'fee' minus 'fx_fee' (if 'fx_fee' exists, otherwise consider it 0). Sum all net fee values and round the final total to two decimal places."
+		],
+		{
+			"payment_events": [
+				"created_at",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	],
+	[
+		[
+			"Select records from the 'payment_events' table created between January 1st, 2025, and March 31st, 2025 (inclusive). For each record, parse the 'payload' JSON data, which contains different object structures (e.g., 'charge' and 'payment_intent'):",
+			"- Filter records where the status/state is 'succeeded' and the currency/currency_code is 'USD' (case-insensitive).",
+			"- For 'charge' objects, extract the 'fee' field as the processing fee.",
+			"- For 'payment_intent' objects, extract and sum the 'amount_cents' from the 'fees' array, filtering specifically for fees where the 'type' is 'processing'.",
+			"- Exclude any fees labeled as 'fx' (foreign-exchange).",
+			"- Calculate the total sum of all identified processing fees.",
+			"- Round the final total to 2 decimal places."
+		],
+		{
+			"payment_events": [
+				"created_at",
+				"payload"
+			]
+		},
+		{
+			"payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+		}
+	]
+]

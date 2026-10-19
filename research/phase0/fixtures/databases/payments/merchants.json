@@ -1,0 +1,80 @@
+{
+    "sample_rows": [
+        {
+            "merchant_id": "M-05",
+            "merchant_name": "Blue Studio 5",
+            "region": "NA",
+            "tier": "silver"
+        },
+        {
+            "merchant_id": "M-08",
+            "merchant_name": "Peak Foods 8",
+            "region": "NA",
+            "tier": "gold"
+        },
+        {
+            "merchant_id": "M-37",
+            "merchant_name": "Atlas Travel 37",
+            "region": "APAC",
+            "tier": "gold"
+        },
+        {
+            "merchant_id": "M-29",
+            "merchant_name": "Blue Retail 29",
+            "region": "EMEA",
+            "tier": "gold"
+        },
+        {
+            "merchant_id": "M-16",
+            "merchant_name": "Atlas Goods 16",
+            "region": "NA",
+            "tier": "bronze"
+        }
+    ],
+    "table_name": "merchants",
+    "table_fullname": "merchants",
+    "column_names": [
+        "merchant_id",
+        "merchant_name",
+        "region",
+        "tier"
+    ],
+    "column_types": [
+        "TEXT",
+        "TEXT",
+        "TEXT",
+        "TEXT"
+    ],
+    "description": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "column_examples": {
+        "merchant_id": [
+            "M-05",
+            "M-08",
+            "M-37",
+            "M-29",
+            "M-16"
+        ],
+        "merchant_name": [
+            "Blue Studio 5",
+            "Peak Foods 8",
+            "Atlas Travel 37",
+            "Blue Retail 29",
+            "Atlas Goods 16"
+        ],
+        "region": [
+            "NA",
+            "APAC",
+            "EMEA"
+        ],
+        "tier": [
+            "silver",
+            "gold",
+            "bronze"
+        ]
+    }
+}

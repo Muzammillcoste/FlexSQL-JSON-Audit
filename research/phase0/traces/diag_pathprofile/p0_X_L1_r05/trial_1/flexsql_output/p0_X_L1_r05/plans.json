@@ -1,0 +1,42 @@
+[
+	[
+		[
+			"Join the 'readings' and 'devices' tables on the 'device_id' column. Filter the records for the 'north' site and for 'recorded_at' timestamps between '2025-06-01' and '2025-06-30'. From the filtered readings, extract the 'energy_kwh' value from the 'payload' JSON column, sum these values, and round the final result to 2 decimal places."
+		],
+		{
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			],
+			"devices": [
+				"device_id",
+				"site"
+			]
+		},
+		{
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+		}
+	],
+	[
+		[
+			"Join the 'devices' table and the 'readings' table on the 'device_id' column. Filter the joined records to include only those where the 'site' column in the 'devices' table is 'north' and the 'recorded_at' column in the 'readings' table falls within the month of June 2025. For the filtered records, extract the 'energy_kwh' value from the 'payload' JSON column, calculate the sum of these values, and round the final result to 2 decimal places."
+		],
+		{
+			"devices": [
+				"device_id",
+				"site"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

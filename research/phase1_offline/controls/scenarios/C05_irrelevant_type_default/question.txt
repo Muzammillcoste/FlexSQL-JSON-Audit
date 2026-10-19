@@ -1,0 +1,1 @@
+Total purchase amount (only purchases carry an amount).

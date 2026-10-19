@@ -1,0 +1,1 @@
+{"instance_id": "p0_X01", "db": "logistics", "question": "What is the total actual (physical) weight, in kilograms rounded to 1 decimal place, of all packages in shipments created in May 2025? Use the physical weight of the packages, not the billable weight. Note: 1 kg = 1000 g.", "external_knowledge": null}

@@ -1,0 +1,34 @@
+[
+	[
+		[
+			"1. Filter the 'shipments' table to identify all records where the 'created_at' column value is within the range '2025-06-01 00:00:00' to '2025-06-30 23:59:59'.",
+			"2. From the resulting subset, filter for shipments where the JSON-formatted 'tracking' column contains an event with the specific status code 'DELIVERED'.",
+			"3. Count the total number of shipments that satisfy both conditions."
+		],
+		{
+			"shipments": [
+				"created_at",
+				"tracking"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+		}
+	],
+	[
+		[
+			"1. Scan the 'shipments' table to identify all shipments that have a tracking event with the exact status code 'DELIVERED' inside the 'tracking' column, which stores events in a JSON format.",
+			"2. Filter these shipments to include only those where the 'created_at' timestamp falls within the month of June 2025.",
+			"3. Count the total number of shipments that satisfy both conditions."
+		],
+		{
+			"shipments": [
+				"created_at",
+				"tracking"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+		}
+	]
+]

@@ -1,0 +1,51 @@
+[
+	[
+		[
+			"1. Join the 'devices' and 'readings' tables on the 'device_id' column.",
+			"2. Filter the joined results for devices located at the 'north' site.",
+			"3. Further filter the results to include only readings recorded during June 2025.",
+			"4. Extract the energy consumption value from the 'payload' field, normalizing all values to kWh (converting Wh values by dividing by 1000 and using kWh values as-is).",
+			"5. Calculate the sum of these energy values.",
+			"6. Round the resulting total energy consumption to 2 decimal places."
+		],
+		{
+			"devices": [
+				"device_id",
+				"site"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	],
+	[
+		[
+			"1. Join the 'devices' and 'readings' tables using the 'device_id' column.",
+			"2. Filter the joined results to include only records where the 'site' column in the 'devices' table is 'north' and the 'recorded_at' timestamp in the 'readings' table falls within June 2025.",
+			"3. Parse the 'payload' column in the 'readings' table to extract energy consumption values; if a reading is given in Wh, convert it to kWh by dividing by 1000.",
+			"4. Calculate the total energy consumption by summing the normalized values (in kWh).",
+			"5. Round the sum to 2 decimal places."
+		],
+		{
+			"devices": [
+				"device_id",
+				"site"
+			],
+			"readings": [
+				"device_id",
+				"recorded_at",
+				"payload"
+			]
+		},
+		{
+			"devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+			"readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+		}
+	]
+]

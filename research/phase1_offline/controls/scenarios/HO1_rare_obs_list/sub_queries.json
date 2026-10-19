@@ -1,0 +1,4 @@
+{
+ "visits": "SELECT \"clinic_id\", \"visit_date\", \"record\" FROM \"visits\"",
+ "clinics": "SELECT \"clinic_id\", \"area\" FROM \"clinics\""
+}

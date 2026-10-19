@@ -1,0 +1,1 @@
+Average temperature of sensors in the west region.

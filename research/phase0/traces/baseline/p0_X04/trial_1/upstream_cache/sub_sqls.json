@@ -1,0 +1,4 @@
+{
+	"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\"",
+	"shipments": "SELECT\n  \"carrier_code\",\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+}

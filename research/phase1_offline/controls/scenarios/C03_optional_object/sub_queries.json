@@ -1,0 +1,3 @@
+{
+ "orders_c": "SELECT \"payload\" FROM \"orders_c\""
+}

@@ -1,0 +1,1 @@
+{"instance_id": "p0_X02", "db": "logistics", "question": "How many item units in total (the sum of item quantities across all packages) were shipped by the carrier named 'FastFreight'?", "external_knowledge": null}

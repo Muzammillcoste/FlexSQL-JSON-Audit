@@ -1,0 +1,30 @@
+[
+	[
+		[
+			"Identify the status code corresponding to 'delivered' by inspecting the 'status' column in the 'orders' table. Filter all rows in the 'orders' table where the 'status' matches this exact value. For these filtered rows, parse the 'details' JSON column to extract the 'city' defined within the 'shipping' -> 'address' path. Keep only those rows where the extracted city is 'Lyon'. Finally, return the count of these filtered rows."
+		],
+		{
+			"orders": [
+				"status",
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+		}
+	],
+	[
+		[
+			"Filter the 'orders' table to select rows where the 'status' is 'delivered'. Within these rows, perform a string-based search on the 'details' column for the pattern containing the city 'Lyon' (specifically checking for the substring \"'city': 'Lyon'\"). Count the number of rows that satisfy both the status filter and the address pattern match."
+		],
+		{
+			"orders": [
+				"status",
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+		}
+	]
+]

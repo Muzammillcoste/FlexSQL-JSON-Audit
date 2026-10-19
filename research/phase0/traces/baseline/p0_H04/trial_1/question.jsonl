@@ -1,0 +1,1 @@
+{"instance_id": "p0_H04", "db": "payments", "question": "How many payment events explicitly record that the customer's email address is unknown, i.e. the email field is present but its value is null? Events in which no email field exists at all must not be counted.", "external_knowledge": null}

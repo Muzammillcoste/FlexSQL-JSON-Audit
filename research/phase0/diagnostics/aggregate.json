@@ -1,0 +1,32 @@
+{
+ "tables_md": [
+  "| tier | planned | executed | correct | wrong (silent) | no answer / error | not executed |\n|---|---|---|---|---|---|---|",
+  "| medium | 10 | 7 | 5 | 2 | 0 | 3 |",
+  "| hard | 10 | 7 | 3 | 4 | 0 | 3 |",
+  "| hardest | 10 | 10 | 4 | 6 | 0 | 0 |",
+  "| **total** | 30 | 24 | 12 | 12 | 0 | 6 |",
+  "\nHeterogeneous-structure cases executed: 16; all required structures observed by the agent: 7; not all observed: 9",
+  "\n| case | tier | rare-rate | status | required observed | used in final program | label |\n|---|---|---|---|---|---|---|",
+  "| p0_H01 | hard | - | wrong_answer | 3/5 | False | A |",
+  "| p0_H02 | hard | - | wrong_answer | 5/5 | False | B |",
+  "| p0_H03 | hard | - | wrong_answer | 3/5 | False | A |",
+  "| p0_H04 | hard | - | wrong_answer | 1/2 | False | E |",
+  "| p0_H10 | hard | - | correct | 3/5 | False |  |",
+  "| p0_H_L1_r20 | hard | 0.2 | correct | 1/1 | True |  |",
+  "| p0_H_L2_r20 | hard | 0.2 | correct | 1/1 | True |  |",
+  "| p0_X01 | hardest | - | correct | 2/2 | True |  |",
+  "| p0_X02 | hardest | - | correct | 1/1 | True |  |",
+  "| p0_X03 | hardest | - | wrong_answer | 0/1 | True | A |",
+  "| p0_X04 | hardest | - | wrong_answer | 0/1 | False | A |",
+  "| p0_X05 | hardest | 0.01 | wrong_answer | 5/6 | False | A |",
+  "| p0_X_L1_r01 | hardest | 0.01 | wrong_answer | 0/1 | False | A |",
+  "| p0_X_L1_r05 | hardest | 0.05 | wrong_answer | 0/1 | False | A |",
+  "| p0_X_L2_r01 | hardest | 0.01 | wrong_answer | 1/1 | False | B |",
+  "| p0_X_L2_r05 | hardest | 0.05 | correct | 1/1 | True |  |",
+  "\n| root-cause category | count |\n|---|---|",
+  "| A | 7 |",
+  "| B | 2 |",
+  "| E | 3 |",
+  "\nBaseline runs: 24; total tokens 4,695,351; est. cost $1.91; mean tokens/run 195,639"
+ ]
+}

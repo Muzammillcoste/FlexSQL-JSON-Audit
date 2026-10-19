@@ -1,0 +1,35 @@
+[
+	[
+		[
+			"1. Access the `customers` table.",
+			"2. Filter the table to select rows where the `segment` column is the verified category 'enterprise' and the `country` column is the verified country code 'DE'.",
+			"3. Calculate the total count of the filtered rows to determine the number of customers meeting these criteria."
+		],
+		{
+			"customers": [
+				"segment",
+				"country"
+			]
+		},
+		{
+			"customers": "SELECT\n  \"segment\",\n  \"country\"\nFROM \"customers\""
+		}
+	],
+	[
+		[
+			"1. Access the 'customers' table.",
+			"2. Filter the table to select records where the 'segment' column is 'enterprise' and the 'country' column is 'DE'.",
+			"3. Perform a count of the distinct 'customer_id' values from the filtered results."
+		],
+		{
+			"customers": [
+				"customer_id",
+				"segment",
+				"country"
+			]
+		},
+		{
+			"customers": "SELECT\n  \"customer_id\",\n  \"segment\",\n  \"country\"\nFROM \"customers\""
+		}
+	]
+]

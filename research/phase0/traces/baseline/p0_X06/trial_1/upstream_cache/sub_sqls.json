@@ -1,0 +1,4 @@
+{
+	"shipments": "SELECT\n  \"shipment_id\",\n  \"carrier_code\"\nFROM \"shipments\"",
+	"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+}

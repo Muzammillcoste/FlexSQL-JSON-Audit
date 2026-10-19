@@ -1,0 +1,1383 @@
+{
+ "p0_H01": {
+  "db": "payments",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount",
+      "amount_cents",
+      "currency",
+      "currency_code",
+      "object",
+      "payload",
+      "region",
+      "state",
+      "status",
+      "usd_amount"
+     ],
+     "get_with_default": 6,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 7,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "merchants": "SELECT\n  \"merchant_id\",\n  \"region\"\nFROM \"merchants\"",
+     "payment_events": "SELECT\n  \"merchant_id\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount_cents",
+      "amount_usd",
+      "currency_code",
+      "merchant_id",
+      "payload",
+      "region",
+      "state"
+     ],
+     "get_with_default": 3,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 3,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "merchants": "SELECT\n  \"merchant_id\",\n  \"region\"\nFROM \"merchants\"",
+     "payment_events": "SELECT\n  \"merchant_id\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H02": {
+  "db": "payments",
+  "group": "B",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "brand",
+      "card",
+      "network",
+      "object",
+      "payload",
+      "payment_method",
+      "state",
+      "status",
+      "type"
+     ],
+     "get_with_default": 5,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 7,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "brand",
+      "card",
+      "card_brand",
+      "details",
+      "instrument",
+      "network",
+      "object",
+      "payload",
+      "payment_method",
+      "result",
+      "state",
+      "status",
+      "transaction"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval",
+      "json.loads"
+     ],
+     "n_except_handlers": 2,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"event_id\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H03": {
+  "db": "payments",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount_cents",
+      "created_at",
+      "currency",
+      "currency_code",
+      "fee",
+      "fees",
+      "net_fee",
+      "object",
+      "payload",
+      "state",
+      "status",
+      "type"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 8,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount_cents",
+      "created_at",
+      "currency",
+      "currency_code",
+      "fee",
+      "fees",
+      "object",
+      "payload",
+      "state",
+      "status",
+      "type"
+     ],
+     "get_with_default": 9,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 11,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H04": {
+  "db": "payments",
+  "group": "E",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "customer",
+      "email",
+      "payload"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"event_id\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "customer",
+      "email",
+      "payload"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H10": {
+  "db": "payments",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount",
+      "amount_cents",
+      "currency",
+      "currency_code",
+      "payload",
+      "state",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval",
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 8,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount",
+      "amount_cents",
+      "currency",
+      "currency_code",
+      "normalized_amount",
+      "normalized_currency",
+      "normalized_status",
+      "payload",
+      "state",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval",
+      "json.loads"
+     ],
+     "n_except_handlers": 2,
+     "n_comparisons": 6,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H_L1_r20": {
+  "db": "fleet_r20",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "data",
+      "energy",
+      "energy_kwh",
+      "k",
+      "metrics",
+      "payload",
+      "readings",
+      "recorded_at",
+      "site",
+      "u",
+      "v"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 10,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "data",
+      "energy_kwh",
+      "k",
+      "metrics",
+      "payload",
+      "readings",
+      "recorded_at",
+      "site",
+      "u",
+      "v"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 11,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_H_L2_r20": {
+  "db": "fleet_r20",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "code",
+      "is_fault",
+      "model",
+      "payload",
+      "recorded_at",
+      "state",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 5,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "code",
+      "extracted_status",
+      "model",
+      "payload",
+      "recorded_at",
+      "state",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 5,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M01": {
+  "db": "retail",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "sql",
+    "features": {
+     "json_paths": [],
+     "n_joins": 0,
+     "has_where": true,
+     "has_group_by": false,
+     "aggregates": [
+      "Count"
+     ],
+     "uses_json_each": false
+    },
+    "sub_queries": {
+     "customers": "SELECT\n  \"segment\",\n  \"country\"\nFROM \"customers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "sql",
+    "features": {
+     "json_paths": [],
+     "n_joins": 0,
+     "has_where": true,
+     "has_group_by": false,
+     "aggregates": [
+      "Count"
+     ],
+     "uses_json_each": false
+    },
+    "sub_queries": {
+     "customers": "SELECT\n  \"customer_id\",\n  \"segment\",\n  \"country\"\nFROM \"customers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M02": {
+  "db": "retail",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "category",
+      "details",
+      "items",
+      "qty",
+      "status"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "category",
+      "details",
+      "items",
+      "qty",
+      "status"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M03": {
+  "db": "retail",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "cost",
+      "details",
+      "method",
+      "shipping"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "cost",
+      "details",
+      "details_parsed",
+      "method",
+      "shipping",
+      "shipping_cost",
+      "shipping_method"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 1,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M04": {
+  "db": "retail",
+  "group": "E",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "coupon",
+      "details",
+      "used_coupon"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "coupon",
+      "details",
+      "details_parsed"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [],
+     "n_except_handlers": 0,
+     "n_comparisons": 0,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M05": {
+  "db": "retail",
+  "group": "E",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "address",
+      "city",
+      "details",
+      "shipping",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "address",
+      "city",
+      "details",
+      "shipping",
+      "status"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "orders": "SELECT\n  \"status\",\n  \"details\"\nFROM \"orders\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M_L1_r00": {
+  "db": "fleet_r00",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "device_id",
+      "energy_kwh",
+      "metrics",
+      "payload",
+      "recorded_at",
+      "site"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 1,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "energy_kwh",
+      "metrics",
+      "payload",
+      "recorded_at",
+      "site"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [],
+     "n_except_handlers": 0,
+     "n_comparisons": 3,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_M_L2_r00": {
+  "db": "fleet_r00",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "model",
+      "payload",
+      "recorded_at",
+      "status"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "device_id",
+      "model",
+      "payload",
+      "recorded_at",
+      "status"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X01": {
+  "db": "logistics",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "created_at",
+      "manifest",
+      "packages",
+      "weight_g",
+      "weight_kg"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 5,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"created_at\",\n  \"manifest\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "created_at",
+      "gross_weight_g",
+      "gross_weight_kg",
+      "manifest",
+      "packages",
+      "weight_g",
+      "weight_kg"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 3,
+     "n_comparisons": 6,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"created_at\",\n  \"manifest\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X02": {
+  "db": "logistics",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "carrier_code",
+      "carrier_name",
+      "manifest",
+      "qty"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"carrier_name\"\nFROM \"carriers\"",
+     "shipments": "SELECT\n  \"carrier_code\",\n  \"manifest\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "boxes",
+      "carrier_name",
+      "items",
+      "manifest",
+      "packages",
+      "qty"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 5,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"carrier_code\",\n  \"manifest\"\nFROM \"shipments\"",
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"carrier_name\"\nFROM \"carriers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X03": {
+  "db": "logistics",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "code",
+      "created_at",
+      "events",
+      "is_delivered",
+      "tracking"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 3,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "code",
+      "created_at",
+      "events",
+      "tracking"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 3,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X04": {
+  "db": "logistics",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "at",
+      "code",
+      "created_at",
+      "delivered_at",
+      "events",
+      "tracking",
+      "transit_time_hours",
+      "transport_mode"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval",
+      "json.loads"
+     ],
+     "n_except_handlers": 2,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"carrier_code\",\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\"",
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "at",
+      "carrier_code",
+      "code",
+      "created_at",
+      "events",
+      "tracking",
+      "transport_mode"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\"",
+     "shipments": "SELECT\n  \"carrier_code\",\n  \"created_at\",\n  \"tracking\"\nFROM \"shipments\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X05": {
+  "db": "payments",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount",
+      "amount_cents",
+      "created_at",
+      "currency",
+      "currency_code",
+      "payload",
+      "state",
+      "status"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval",
+      "json.loads"
+     ],
+     "n_except_handlers": 4,
+     "n_comparisons": 8,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "amount",
+      "amount_cents",
+      "created_at",
+      "currency",
+      "currency_code",
+      "object",
+      "payload",
+      "state",
+      "status",
+      "transaction"
+     ],
+     "get_with_default": 10,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 8,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "payment_events": "SELECT\n  \"created_at\",\n  \"payload\"\nFROM \"payment_events\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X06": {
+  "db": "logistics",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "sql",
+    "features": {
+     "json_paths": [],
+     "n_joins": 1,
+     "has_where": true,
+     "has_group_by": false,
+     "aggregates": [
+      "Count"
+     ],
+     "uses_json_each": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"shipment_id\",\n  \"carrier_code\"\nFROM \"shipments\"",
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "sql",
+    "features": {
+     "json_paths": [],
+     "n_joins": 1,
+     "has_where": true,
+     "has_group_by": false,
+     "aggregates": [
+      "Count"
+     ],
+     "uses_json_each": false
+    },
+    "sub_queries": {
+     "shipments": "SELECT\n  \"shipment_id\",\n  \"carrier_code\"\nFROM \"shipments\"",
+     "carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X_L1_r01": {
+  "db": "fleet_r01",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "energy_kwh",
+      "metrics",
+      "payload",
+      "recorded_at",
+      "site"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 1,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "energy_kwh",
+      "metrics",
+      "payload",
+      "recorded_at",
+      "site"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 1,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X_L1_r05": {
+  "db": "fleet_r05",
+  "group": "A",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "sql",
+    "features": {
+     "json_paths": [
+      "'$.metrics.energy_kwh'"
+     ],
+     "n_joins": 1,
+     "has_where": true,
+     "has_group_by": false,
+     "aggregates": [
+      "Sum"
+     ],
+     "uses_json_each": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "device_id",
+      "energy",
+      "energy_kwh",
+      "metrics",
+      "payload",
+      "recorded_at",
+      "site"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 1,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"site\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X_L2_r01": {
+  "db": "fleet_r01",
+  "group": "B",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "model",
+      "payload",
+      "recorded_at",
+      "status"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 2,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "model",
+      "payload",
+      "recorded_at",
+      "status"
+     ],
+     "get_with_default": 1,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ },
+ "p0_X_L2_r05": {
+  "db": "fleet_r05",
+  "group": "correct",
+  "chosen": "0_0",
+  "programs": {
+   "0_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "code",
+      "device_id",
+      "is_fault",
+      "model",
+      "payload",
+      "recorded_at",
+      "state",
+      "status"
+     ],
+     "get_with_default": 2,
+     "parse_calls": [
+      "json.loads"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 3,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\"",
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   },
+   "1_0": {
+    "kind": "py",
+    "features": {
+     "string_keys": [
+      "model",
+      "payload",
+      "recorded_at",
+      "status",
+      "status_normalized"
+     ],
+     "get_with_default": 0,
+     "parse_calls": [
+      "ast.literal_eval"
+     ],
+     "n_except_handlers": 1,
+     "n_comparisons": 4,
+     "direct_conn_access": false
+    },
+    "sub_queries": {
+     "readings": "SELECT\n  \"device_id\",\n  \"recorded_at\",\n  \"payload\"\nFROM \"readings\"",
+     "devices": "SELECT\n  \"device_id\",\n  \"model\"\nFROM \"devices\""
+    },
+    "replay_ok": true,
+    "matches_saved_output": true
+   }
+  }
+ }
+}

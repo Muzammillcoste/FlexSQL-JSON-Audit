@@ -1,0 +1,44 @@
+[
+	[
+		[
+			"1. Filter the 'carriers' table to locate carriers where the 'transport_mode' column exactly matches 'sea'.",
+			"2. Join this filtered list of carriers with the 'shipments' table using the 'carrier_code' column as the joining key.",
+			"3. Count the total number of entries in the 'shipment_id' column from the joined results to determine the number of shipments handled by those carriers."
+		],
+		{
+			"carriers": [
+				"carrier_code",
+				"transport_mode"
+			],
+			"shipments": [
+				"shipment_id",
+				"carrier_code"
+			]
+		},
+		{
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\"",
+			"shipments": "SELECT\n  \"shipment_id\",\n  \"carrier_code\"\nFROM \"shipments\""
+		}
+	],
+	[
+		[
+			"1. Join the 'shipments' table and the 'carriers' table using the 'carrier_code' column.",
+			"2. Filter the joined records to include only those where the 'transport_mode' in the 'carriers' table is exactly 'sea'.",
+			"3. Return the count of these filtered shipment records."
+		],
+		{
+			"shipments": [
+				"shipment_id",
+				"carrier_code"
+			],
+			"carriers": [
+				"carrier_code",
+				"transport_mode"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"shipment_id\",\n  \"carrier_code\"\nFROM \"shipments\"",
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"transport_mode\"\nFROM \"carriers\""
+		}
+	]
+]

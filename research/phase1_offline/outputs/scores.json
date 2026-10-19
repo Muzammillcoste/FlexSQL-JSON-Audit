@@ -1,0 +1,890 @@
+{
+ "summary": {
+  "A/B targets (Phase 0)": {
+   "detector": [
+    9,
+    9
+   ],
+   "detector_anchor": [
+    9,
+    9
+   ],
+   "B1_any_missing": [
+    9,
+    9
+   ],
+   "B2_rare_missing": [
+    9,
+    9
+   ],
+   "B3_profile_het": [
+    9,
+    9
+   ]
+  },
+  "correct runs (Phase 0)": {
+   "detector": [
+    0,
+    12
+   ],
+   "detector_anchor": [
+    0,
+    12
+   ],
+   "B1_any_missing": [
+    5,
+    12
+   ],
+   "B2_rare_missing": [
+    5,
+    12
+   ],
+   "B3_profile_het": [
+    8,
+    12
+   ]
+  },
+  "E artefacts (Phase 0)": {
+   "detector": [
+    0,
+    3
+   ],
+   "detector_anchor": [
+    0,
+    3
+   ],
+   "B1_any_missing": [
+    3,
+    3
+   ],
+   "B2_rare_missing": [
+    3,
+    3
+   ],
+   "B3_profile_het": [
+    3,
+    3
+   ]
+  },
+  "benign controls (synthetic)": {
+   "detector": [
+    5,
+    14
+   ],
+   "detector_anchor": [
+    0,
+    14
+   ],
+   "B1_any_missing": [
+    14,
+    14
+   ],
+   "B2_rare_missing": [
+    10,
+    14
+   ],
+   "B3_profile_het": [
+    14,
+    14
+   ]
+  },
+  "synthetic targets (row-level)": {
+   "detector": [
+    2,
+    2
+   ],
+   "detector_anchor": [
+    2,
+    2
+   ],
+   "B1_any_missing": [
+    2,
+    2
+   ],
+   "B2_rare_missing": [
+    2,
+    2
+   ],
+   "B3_profile_het": [
+    2,
+    2
+   ]
+  },
+  "synthetic target (array-element)": {
+   "detector": [
+    0,
+    1
+   ],
+   "detector_anchor": [
+    0,
+    1
+   ],
+   "B1_any_missing": [
+    0,
+    1
+   ],
+   "B2_rare_missing": [
+    0,
+    1
+   ],
+   "B3_profile_het": [
+    1,
+    1
+   ]
+  },
+  "held-out targets": {
+   "detector": [
+    2,
+    2
+   ],
+   "detector_anchor": [
+    0,
+    2
+   ],
+   "B1_any_missing": [
+    2,
+    2
+   ],
+   "B2_rare_missing": [
+    2,
+    2
+   ],
+   "B3_profile_het": [
+    2,
+    2
+   ]
+  },
+  "held-out benign": {
+   "detector": [
+    2,
+    3
+   ],
+   "detector_anchor": [
+    0,
+    3
+   ],
+   "B1_any_missing": [
+    2,
+    3
+   ],
+   "B2_rare_missing": [
+    1,
+    3
+   ],
+   "B3_profile_het": [
+    3,
+    3
+   ]
+  }
+ },
+ "rows": [
+  {
+   "item": "p0_H01",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H02",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "B",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H03",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H04",
+   "set": "phase0",
+   "group": "E_artifact",
+   "phase0_label": "E",
+   "detector": false,
+   "detector_parse": true,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": true,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H10",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H_L1_r20",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_H_L2_r20",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_M01",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": false
+  },
+  {
+   "item": "p0_M02",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_M03",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_M04",
+   "set": "phase0",
+   "group": "E_artifact",
+   "phase0_label": "E",
+   "detector": false,
+   "detector_parse": true,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": true,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_M05",
+   "set": "phase0",
+   "group": "E_artifact",
+   "phase0_label": "E",
+   "detector": false,
+   "detector_parse": true,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": true,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_M_L1_r00",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": false
+  },
+  {
+   "item": "p0_M_L2_r00",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": false
+  },
+  {
+   "item": "p0_X01",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X02",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X03",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X04",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X05",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X06",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": false
+  },
+  {
+   "item": "p0_X_L1_r01",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X_L1_r05",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "A",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X_L2_r01",
+   "set": "phase0",
+   "group": "target_AB",
+   "phase0_label": "B",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_names_required_path": true,
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "detector_anchor_names_required_path": true,
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "p0_X_L2_r05",
+   "set": "phase0",
+   "group": "benign",
+   "phase0_label": "correct",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C01_null_vs_absent",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C02_optional_bool",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C03_optional_object",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C04_irrelevant_type_guarded",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C05_irrelevant_type_default",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C06_filtered_before_parse",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C07_filtered_after_parse",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C08_join_restriction",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C09_same_leaf_name",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C10_array_optional_elem_key",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C11_numeric_strings",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C12_sql_optional",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C13_sql_irrelevant_type_filter",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "C14_sql_filtered_scope",
+   "set": "controls",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "T01_py_rare_legacy",
+   "set": "controls",
+   "group": "target_synth",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "T02_sql_rare_legacy",
+   "set": "controls",
+   "group": "target_synth",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": true,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "SUSPICIOUS",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "T03_array_element_variant",
+   "set": "controls",
+   "group": "target_elem",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "HO1_rare_obs_list",
+   "set": "heldout",
+   "group": "target_synth",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "HO2_complete_handling",
+   "set": "heldout",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "HO3_optional_allergies",
+   "set": "heldout",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  },
+  {
+   "item": "HO4_sql_rare_obs",
+   "set": "heldout",
+   "group": "target_synth",
+   "phase0_label": "",
+   "detector": true,
+   "detector_parse": false,
+   "detector_verdict": "SUSPICIOUS",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": true,
+   "B2_rare_missing": true,
+   "B3_profile_het": true
+  },
+  {
+   "item": "HO5_visit_type_counts",
+   "set": "heldout",
+   "group": "benign",
+   "phase0_label": "",
+   "detector": false,
+   "detector_parse": false,
+   "detector_verdict": "NO_EVIDENCE",
+   "detector_anchor": false,
+   "detector_anchor_parse": false,
+   "detector_anchor_verdict": "NO_EVIDENCE",
+   "B1_any_missing": false,
+   "B2_rare_missing": false,
+   "B3_profile_het": true
+  }
+ ]
+}

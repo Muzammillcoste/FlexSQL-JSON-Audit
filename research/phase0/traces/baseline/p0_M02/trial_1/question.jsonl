@@ -1,0 +1,1 @@
+{"instance_id": "p0_M02", "db": "retail", "question": "What is the total number of units (sum of item quantities) of products in the 'electronics' category across all orders with status 'delivered'?", "external_knowledge": null}

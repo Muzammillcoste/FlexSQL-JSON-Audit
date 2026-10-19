@@ -1,0 +1,44 @@
+[
+	[
+		[
+			"1. Search the 'carriers' table to retrieve the 'carrier_code' associated with the 'carrier_name' equal to 'FastFreight'. 2. Use this 'carrier_code' to filter rows in the 'shipments' table. 3. For every resulting shipment record, parse the 'manifest' JSON field to access the 'packages' structure. 4. Within each package, traverse the 'items' list and extract the 'qty' value for each item (noting that the structure may contain nested items). 5. Sum all the extracted 'qty' values across all packages for the filtered shipments to obtain the total item unit count."
+		],
+		{
+			"carriers": [
+				"carrier_code",
+				"carrier_name"
+			],
+			"shipments": [
+				"carrier_code",
+				"manifest"
+			]
+		},
+		{
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"carrier_name\"\nFROM \"carriers\"",
+			"shipments": "SELECT\n  \"carrier_code\",\n  \"manifest\"\nFROM \"shipments\""
+		}
+	],
+	[
+		[
+			"1. Join the 'carriers' and 'shipments' tables using the 'carrier_code' column.",
+			"2. Filter the combined results to include only records where the 'carrier_name' matches 'FastFreight'.",
+			"3. For each shipment in the filtered list, parse the 'manifest' JSON column to extract all nested 'packages' and their associated 'items'.",
+			"4. Extract the value of the 'qty' property for every item found across all packages.",
+			"5. Accumulate the total by summing all these extracted quantity values together."
+		],
+		{
+			"shipments": [
+				"carrier_code",
+				"manifest"
+			],
+			"carriers": [
+				"carrier_code",
+				"carrier_name"
+			]
+		},
+		{
+			"shipments": "SELECT\n  \"carrier_code\",\n  \"manifest\"\nFROM \"shipments\"",
+			"carriers": "SELECT\n  \"carrier_code\",\n  \"carrier_name\"\nFROM \"carriers\""
+		}
+	]
+]

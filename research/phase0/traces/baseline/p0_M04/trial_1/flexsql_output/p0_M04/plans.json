@@ -1,0 +1,28 @@
+[
+	[
+		[
+			"Query the 'orders' table to count the total number of records where the 'details' field contains a 'coupon' key with a value that is neither null nor empty."
+		],
+		{
+			"orders": [
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"details\"\nFROM \"orders\""
+		}
+	],
+	[
+		[
+			"Parse the 'details' column in the 'orders' table as a JSON object, then filter the records to include only those where the 'coupon' field is present and not null. Finally, count the number of resulting records."
+		],
+		{
+			"orders": [
+				"details"
+			]
+		},
+		{
+			"orders": "SELECT\n  \"details\"\nFROM \"orders\""
+		}
+	]
+]

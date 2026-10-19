@@ -1,0 +1,3 @@
+{
+	"orders": "SELECT\n  \"details\"\nFROM \"orders\""
+}

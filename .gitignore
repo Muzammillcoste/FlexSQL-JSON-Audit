@@ -1,0 +1,15 @@
+.sf
+.env
+.venv-phase0/
+__pycache__/
+*.pyc
+research/phase0/runs_*_console.txt
+
+# third-party checkout: re-clone at the pinned SHA (see README); upstream has no LICENSE file
+upstream/
+
+# regenerable / superseded outputs
+research/phase0/traces/_archive_model_selection/
+research/phase1_offline/preflight/replay_out/
+research/phase1_offline/outputs/_work/
+research/phase1_offline/outputs/v2/eval_items_run1.jsonl

@@ -1,0 +1,1 @@
+{"instance_id": "p0_X04", "db": "logistics", "question": "For delivered shipments handled by carriers whose transport mode is 'air', what is the average transit time in hours, measured from the shipment's created_at timestamp (UTC) to its delivery event, rounded to 1 decimal place?", "external_knowledge": null}
