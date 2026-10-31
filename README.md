@@ -2,7 +2,7 @@
 
 This study asks whether the FlexSQL text-to-SQL agent ([paper](https://arxiv.org/abs/2605.02815), [code](https://github.com/StringNLPLAB/FlexSQL)) fails silently when the JSON columns it queries contain rare or alternative structures. It also asks whether a cheap, reference-free check could catch those failures.
 
-**Status (2026-10-19):** both phases are complete.
+**Status (2026-10-19):** both phases are complete. The pre-registered protocol and decision criteria for each phase are in [research/PROTOCOL.md](research/PROTOCOL.md).
 
 | Phase | Result |
 |---|---|
@@ -60,6 +60,7 @@ The candidate check replays each saved program offline, traces which JSON keys i
 
 ```
 research/
+  PROTOCOL.md               study protocol, integrity rules and decision criteria (both phases)
   phase0/
     PHASE0_REPORT.md        main report (GO/PIVOT/NO-GO analysis, verdict PIVOT)
     failures.md             per-failure trace evidence and root-cause labels

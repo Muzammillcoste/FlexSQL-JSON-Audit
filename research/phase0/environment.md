@@ -55,7 +55,7 @@ No upstream file is modified (`git -C upstream/FlexSQL status --porcelain` is em
 | Provider:model | Auth | Tool loop through upstream `Chat` | FlexSQL stitching on JSON | Decision |
 |---|---|---|---|---|
 | Gemini `gemini-2.5-flash` | OK | OK (after dropping top_k) | **Fails.** All 40 stitching calls of smoke case p0_M02 returned `finish_reason="function_call_filter: MALFORMED_FUNCTION_CALL"` with empty content. Replaying that request reproduced the failure 3/3 times with reasoning_effort=low, with temperature 0, without `python_interpreter`, and with `query_database` as the only tool; it disappears only with no tools at all. The case ended with a single wrong candidate. | Rejected (G: provider incompatibility) |
-| Gemini `gemini-2.5-flash-lite` | 404 "no longer available to new users" | – | – | Unavailable (the model the user asked for) |
+| Gemini `gemini-2.5-flash-lite` | 404 "no longer available to new users" | – | – | Unavailable (originally planned model) |
 | Gemini `gemini-3.x-flash`, `flash-latest`, `flash-lite-latest` | OK | **Fails without shim**: 400 missing thought_signature. Works with compat transform 2. | 3.8-flash, 3.5-flash and 3.1-flash-lite: valid tool calls on the replay | 3.8-flash smoke: p0_M02 correct 4/4, but 196 calls, 1.14M tokens and ≈1.03 USD; p0_M01 ≈1.5 USD before it was stopped. Too expensive for the 5 USD budget. |
 | Gemini `gemini-2.5-pro` | OK | OK | valid tool calls on the replay | Not used (cost) |
 | Gemini **`gemini-3.1-flash-lite`** | OK | OK with shim (sum query answered "12") | valid `python_interpreter` calls on the replay | **Selected** (cheapest working model; user choice) |

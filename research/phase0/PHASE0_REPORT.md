@@ -41,9 +41,9 @@ Full record in `environment.md`.
   - Gemini 3.x requires `thought_signature` on tool-call replay. Upstream `chat.py` drops it, so the harness re-attaches it to a copy of the outgoing request. This is transport-level only; no upstream file was edited.
 - **Models tried:**
   - `gemini-2.5-flash` was rejected. Every stitching call on the JSON smoke case returned `MALFORMED_FUNCTION_CALL`; this was reproduced in isolation, even with `query_database` as the only tool.
-  - `gemini-2.5-flash-lite`, the model you asked for, returns **404 "no longer available to new users"** for this key.
+  - `gemini-2.5-flash-lite`, the originally planned model, returns **404 "no longer available to new users"** for this key.
   - `gemini-3.8-flash` works, but costs about 1–1.5 USD per question.
-  - **Selected: `gemini-3.1-flash-lite`** (your choice).
+  - **Selected: `gemini-3.1-flash-lite`** (cheapest working model).
 - **Groq `openai/gpt-oss-120b`** (the paper's model) authenticates and runs the tool loop. It is **infeasible** on this account because of the 8,000 tokens-per-minute limit: a single FlexSQL request is often larger than that.
 - **Smoke tests:**
   - Relational p0_M01 (gemini-2.5-flash): correct.
@@ -139,7 +139,7 @@ More failures with trace citations: `failures.md`. Every trace is in `traces/bas
 - The path-frequency profile was injected through upstream's own BIRD-style `evidence` field, with no code change. The trace confirms it appeared in 7 prompts across planning, clarification, stitching and evaluation.
 - Result: **still wrong (524.50)**, using `metrics.energy_kwh` only, and the evaluator approved it twice.
 - With n = 1 this is weak evidence. It does fit the B failures: *showing* the agent the structure was not enough, and the agent did not relate the rare path to the question.
-- **Implication.** Cheap, ordinary JSON inspection fully solves the *discovery* step. The remaining problem is getting the agent to use and verify coverage. As MASTER.md puts it, "if the oracle hint does not improve the outcome, the failure is unlikely to be solely missing path discovery". The oracle-hint arm itself was built (`diagnostics/questions_diag_oracle.jsonl`) but **not run** (budget).
+- **Implication.** Cheap, ordinary JSON inspection fully solves the *discovery* step. The remaining problem is getting the agent to use and verify coverage. As the [study protocol](../PROTOCOL.md) puts it, "if the oracle hint does not improve the outcome, the failure is unlikely to be solely missing path discovery". The oracle-hint arm itself was built (`diagnostics/questions_diag_oracle.jsonl`) but **not run** (budget).
 
 ## 11. Limitations and confounders
 1. **One trial per question.** Stochastic and reproducible failures cannot be told apart. The ladder pairs lend some causal weight, but every rung is a single sample.
@@ -155,7 +155,7 @@ More failures with trace citations: `failures.md`. Every trace is in `traces/bas
    - Any of these could shift results in either direction for a different model or setup.
 6. **Discovery flags** are regex heuristics over tool outputs, checked by hand for every failure; one false positive (X03 "used") was corrected.
 7. **Compat shims and model choice.** The two transport shims are believed to be semantics-neutral (dropping `top_k`, re-attaching `thought_signature`). The model was chosen after smoke tests on two other models, a selection step that is documented.
-8. **Spend.** About 2.8 USD went on model-selection smoke tests (gemini-3.8-flash) before your 5 USD limit was stated. That left about 2 USD for the baseline.
+8. **Spend.** About 2.8 USD went on model-selection smoke tests (gemini-3.8-flash) before the 5 USD total budget was fixed. That left about 2 USD for the baseline.
 
 ## 12. Recommendation: **PIVOT**
 

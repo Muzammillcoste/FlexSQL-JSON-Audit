@@ -60,7 +60,7 @@ Defensible distinction, at most: tracing the JSON accesses an LLM-generated prog
 ## Why not PIVOT or CONDITIONAL GO
 
 - **CONDITIONAL GO** requires rarely warning on legitimate controls and not failing the independent negative controls. The primary rule fails that; the anchor arm fails on held-out data.
-- **PIVOT** ("package it as a portfolio artifact") would spend more of the owner's time on polish. The artefact is already documented (PREFLIGHT, RESULTS, code, tests, frozen hashes). Extra packaging adds little and is not justified.
+- **PIVOT** ("package it as a portfolio artifact") would spend more time on polish. The artefact is already documented (PREFLIGHT, RESULTS, code, tests, frozen hashes). Extra packaging adds little and is not justified.
 
 ## Limitations of this decision
 
@@ -71,11 +71,11 @@ Defensible distinction, at most: tracing the JSON accesses an LLM-generated prog
 
 A different author's realistic mixed-type JSON benchmark could change the false-positive picture in either direction. Nothing here suggests it would favour the detector.
 
-## Is it worth the owner's time before the University of Alberta applications?
+## Is further work worthwhile?
 
-**No further research time.** At most an hour to read PHASE0_REPORT.md and this file, if the owner wants to describe the project in a statement of purpose as a carefully run negative result.
+**No further research time on this direction.** The project is best presented as a carefully run negative result.
 
-That story would be: built a reproducible baseline audit; found real silent failures and upstream confounds (Python-repr display, the sqlglot `->` rewrite); pre-registered a diagnostic and controls; and stopped when it failed its own negative controls. Rigorous negative results, not a weak positive one, are the credible thing to show.
+In summary, the project built a reproducible baseline audit; found real silent failures and upstream confounds (Python-repr display, the sqlglot `->` rewrite); pre-registered a diagnostic and controls; and stopped when it failed its own negative controls. Rigorous negative results, not a weak positive one, are the credible thing to show.
 
 ## What ran / what did not
 

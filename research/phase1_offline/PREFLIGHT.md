@@ -2,7 +2,7 @@
 
 Date 2026-10-19. No LLM or API calls were made. Phase 0 artefacts, upstream FlexSQL (`0ff2f51`) and the frozen fixtures were only read, never modified. The script used here is `preflight/inventory.py`; its output is `preflight/inventory.json`, and its replay outputs are in `preflight/replay_out/`.
 
-**Conflict of interest, stated up front.** The same agent built the Phase 0 fixtures and failure labels and is now designing the detector, so it already knows which variants each failure omits. That knowledge cannot be removed. The mitigations are:
+**Conflict of interest, stated up front.** The same author built the Phase 0 fixtures and failure labels and is now designing the detector, so the author already knows which variants each failure omits. That knowledge cannot be removed. The mitigations are:
 
 - a detector rule with no tuned thresholds, written from the principles in §5 and not from case details;
 - code hashes frozen before any scoring;
@@ -122,7 +122,7 @@ A `json_tree` / `FLATTEN` profile describes **the column**. It cannot say whethe
 
 ## 6. Related work and overlap
 
-The owner asked for no external calls, so **no paper was fetched in this phase**. Only sources whose content I could check are characterised.
+The phase protocol allowed no external calls, so **no paper was fetched in this phase**. Only sources whose content could be checked are characterised.
 
 | work | status here | overlap |
 |---|---|---|
@@ -131,17 +131,17 @@ The owner asked for no external calls, so **no paper was fetched in this phase**
 | FlexSQL (https://arxiv.org/abs/2605.02815; code inspected) | code read in Phase 0 | Has exploration tools and an LLM self-evaluator. It has **no** coverage, row-level or program-linked check (verified in code and in 47 traced evaluator verdicts). |
 | MRSQLGen (https://doi.org/10.1145/3797146) | **not read** | Unknown. If it is metamorphic testing of generated SQL, it is reference-free like this proposal, and the overlap could be material. |
 | SpotIt+ (https://arxiv.org/abs/2603.04334) | **not read** | From memory, unverified: the SpotIt line searches for database instances on which generated and *gold* SQL differ. That is reference-based; if SpotIt+ keeps that design, it is distinct. |
-| TraceSQL (https://arxiv.org/abs/2608.17795) | **not read** (published after my knowledge cutoff) | Unknown; the name suggests execution tracing. **The highest overlap risk; it could subsume this proposal.** |
+| TraceSQL (https://arxiv.org/abs/2608.17795) | **not read** | Unknown; the name suggests execution tracing. **The highest overlap risk; it could subsume this proposal.** |
 | Related lines from memory, not re-checked: why-not provenance (Chapman & Jagadish, SIGMOD 2009; Herschel et al., Artemis); `mlinspect` (Grafberger et al., data-distribution debugging of pandas pipelines); Deequ completeness constraints (Schelter et al., VLDB 2018); JSON schema inference (Baazizi et al.) | – | Row lineage through filters and "which tuples went missing and why" are well studied. mlinspect already instruments pandas pipelines to report rows that operators drop, grouped by attributes. |
 
 **The specific remaining distinction**, if any: tracing the JSON key accesses that an *LLM-generated* program executes, inside the scope the program itself defines, and contrasting the rows it read nothing from by *structure*. Neither json_tree/FLATTEN (no link to a program) nor FlexSQL does this. Against why-not provenance and mlinspect, the distinction is narrow: it is an application of row lineage with JSON-shape grouping, not a new principle. Against MRSQLGen, SpotIt+ and TraceSQL it is **unverified**.
 
 ## 7. Gate judgement
 
-| stop condition (from the brief) | result |
+| stop condition (from the [protocol](../PROTOCOL.md)) | result |
 |---|---|
 | fewer than 5 of the 9 A/B failures technically eligible | **not triggered**: 9/9 eligible with dynamic replay (only 1/9 with static analysis) |
 | detection would need gold answers or case-specific path aliases | **not triggered by design**: the rule uses the program, the DB and set differences only; no alias dictionary |
 | the check would only reproduce a standard profiling query | **not triggered**: the test is program-linked and row-level (what the program read), which a profile cannot give |
 
-**Preflight: PASS (technical), with a weak novelty position.** Proceeding to a minimal, time-boxed Stage B/C is justified only because an offline evaluation costs no money and answers the open empirical question: does the signal separate the 9 targets from the 12 correct runs, and does it beat the naive baselines? The pass is **not** evidence of research value. The novelty question stays open until the three unread papers are checked by the owner.
+**Preflight: PASS (technical), with a weak novelty position.** Proceeding to a minimal, time-boxed Stage B/C is justified only because an offline evaluation costs no money and answers the open empirical question: does the signal separate the 9 targets from the 12 correct runs, and does it beat the naive baselines? The pass is **not** evidence of research value. The novelty question stays open until the three unread papers are checked.
